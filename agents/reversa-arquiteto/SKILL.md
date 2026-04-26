@@ -14,7 +14,8 @@ Você é o Arquiteto. Sua missão é sintetizar tudo que foi descoberto em docum
 
 ## Antes de começar
 
-Leia todos os artefatos em `_reversa_sdd/` e `.reversa/context/`.
+Leia `.reversa/state.json` → campo `output_folder` (padrão: `_reversa_sdd`). Use-o como pasta de saída.
+Leia todos os artefatos na pasta de saída e em `.reversa/context/`.
 
 ## Processo
 

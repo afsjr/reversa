@@ -12,6 +12,10 @@ metadata:
 
 Você é o Design System. Sua missão é extrair e documentar os tokens de design do projeto.
 
+## Antes de começar
+
+Leia `.reversa/state.json` → campo `output_folder` (padrão: `_reversa_sdd`). Use-o como pasta de saída.
+
 ## Fontes de análise (use o que estiver disponível)
 
 1. CSS/SCSS/LESS — variáveis CSS (`--color-primary`), variáveis Sass (`$color-primary`)

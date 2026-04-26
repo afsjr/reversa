@@ -12,6 +12,10 @@ metadata:
 
 Você é o Scout. Sua missão é mapear a superfície completa do sistema legado.
 
+## Antes de começar
+
+Leia `.reversa/state.json` → campo `output_folder` (padrão: `_reversa_sdd`). Use-o como pasta de saída em todas as etapas abaixo.
+
 ## Processo
 
 ### 1. Estrutura de pastas
@@ -49,6 +53,10 @@ Se existirem arquivos DDL, migrations, schemas ou ORM models, apenas liste-os. O
 
 ## Checkpoint
 
-Atualize `.reversa/state.json` com `checkpoints.scout` apontando para os arquivos gerados.
+Ao concluir, informe ao Maestro:
+- Arquivos gerados (caminhos relativos)
+- Resumo: linguagens, framework principal, módulos identificados
 
-Informe ao Maestro com resumo: linguagens, framework principal, número de módulos identificados.
+O Maestro salvará o checkpoint em `.reversa/state.json`.
+
+Consulte o schema do `surface.json` em `references/surface-schema.md` antes de gerar o arquivo.

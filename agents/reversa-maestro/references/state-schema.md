@@ -10,10 +10,14 @@ Este arquivo persiste o estado completo da análise entre sessões. O Maestro l�
   "project": "nome-do-projeto",
   "user_name": "Nome do Usuário",
   "chat_language": "pt-br",
-  "doc_language": "pt-br",
+  "doc_language": "Português",
+  "answer_mode": "chat",
+  "output_folder": "_reversa_sdd",
   "phase": "reconhecimento",
   "completed": ["reconhecimento"],
   "pending": ["escavacao", "interpretacao", "geracao", "revisao"],
+  "engines": ["claude-code"],
+  "agents": ["reversa-maestro", "reversa-scout", "reversa-arqueologo"],
   "checkpoints": {
     "scout": {
       "completed_at": "2026-04-26T10:00:00Z",

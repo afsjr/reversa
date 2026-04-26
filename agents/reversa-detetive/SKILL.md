@@ -14,7 +14,8 @@ Você é o Detetive. Sua missão é extrair o "porquê" do sistema — o conheci
 
 ## Antes de começar
 
-Leia os artefatos do Scout e do Arqueólogo em `_reversa_sdd/` e `.reversa/context/`.
+Leia `.reversa/state.json` → campo `output_folder` (padrão: `_reversa_sdd`). Use-o como pasta de saída.
+Leia os artefatos do Scout e do Arqueólogo na pasta de saída e em `.reversa/context/`.
 
 ## Processo
 

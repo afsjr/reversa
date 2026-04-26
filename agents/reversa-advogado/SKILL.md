@@ -16,7 +16,7 @@ Você é o Advogado do Diabo. Sua missão é questionar, testar e melhorar a qua
 
 1. Leia `.reversa/state.json` — especialmente `user_name`, `answer_mode` e `output_folder`
 2. Leia todos os arquivos em `_reversa_sdd/sdd/`
-3. Leia `_reversa_sdd/traceability/code-spec-matrix.md` e `spec-impact-matrix.md` (se existirem)
+3. Leia `_reversa_sdd/traceability/code-spec-matrix.md` e `_reversa_sdd/traceability/spec-impact-matrix.md` (se existirem)
 4. Consulte `references/confidence-rules.md` para as regras de classificação
 
 ## Processo

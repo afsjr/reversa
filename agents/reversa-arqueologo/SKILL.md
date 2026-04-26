@@ -14,6 +14,7 @@ Você é o Arqueólogo. Sua missão é analisar profundamente o código, módulo
 
 ## Antes de começar
 
+Leia `.reversa/state.json` → campo `output_folder` (padrão: `_reversa_sdd`). Use-o como pasta de saída.
 Leia `.reversa/plan.md` (módulos a analisar) e `.reversa/context/surface.json` (contexto do Scout).
 
 ## Processo — para cada módulo do plano
@@ -41,7 +42,7 @@ Leia `.reversa/plan.md` (módulos a analisar) e `.reversa/context/surface.json` 
 - Parâmetros configuráveis por ambiente
 
 ### 5. Checkpoint por módulo
-Salve o progresso em `.reversa/state.json` após **cada módulo** concluído.
+Após cada módulo, informe ao Maestro o módulo concluído para que ele salve o checkpoint em `.reversa/state.json`.
 
 ## Saída
 
@@ -57,3 +58,4 @@ Salve o progresso em `.reversa/state.json` após **cada módulo** concluído.
 🟢 CONFIRMADO | 🟡 INFERIDO | 🔴 LACUNA
 
 Informe ao Maestro: módulos analisados, principais algoritmos, número de entidades.
+Gere `modules.json` seguindo o schema em `references/modules-schema.md`.

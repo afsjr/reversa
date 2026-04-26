@@ -19,7 +19,9 @@ Apenas observa e lê. Nenhum INSERT, UPDATE, DELETE ou operação de escrita.
 
 ## Antes de começar
 
-Leia `_reversa_sdd/gaps.md` e `_reversa_sdd/questions.md`. Identifique quais lacunas 🔴 a análise dinâmica pode resolver.
+Leia `.reversa/state.json` → campo `output_folder` (padrão: `_reversa_sdd`). Use-o como pasta de saída.
+
+Se existirem, leia `[output_folder]/gaps.md` e `[output_folder]/questions.md` para identificar as lacunas 🔴 que a análise dinâmica pode resolver. Se esses arquivos não existirem ainda, pergunte ao Maestro ou ao usuário quais lacunas devem ser investigadas.
 
 ## Processo
 

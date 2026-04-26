@@ -19,7 +19,8 @@ Uma spec deve ser suficientemente detalhada para que um agente de IA, sem acesso
 
 ## Antes de começar
 
-Leia todos os artefatos em `_reversa_sdd/` e `.reversa/context/`.
+Leia `.reversa/state.json` → campo `output_folder` (padrão: `_reversa_sdd`). Use-o como pasta de saída.
+Leia todos os artefatos na pasta de saída e em `.reversa/context/`.
 
 ## Processo
 
