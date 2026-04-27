@@ -1,8 +1,13 @@
 # Writer
 
-**Command:** `/reversa-redator`
+**Command:** `/reversa-writer`
 **Phase:** 4 - Generation
-**Analogy:** The notary
+
+---
+
+## 📝 The notary
+
+The notary transforms what was discovered into formal, precise, traceable contracts. Each clause has a declared confidence level. The document is a contract: an AI agent can reimplement the system from it.
 
 ---
 

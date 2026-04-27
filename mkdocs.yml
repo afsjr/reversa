@@ -91,7 +91,6 @@ plugins:
             Reversa (Orchestrator): Reversa (Orquestador)
             Generated outputs: Salidas generadas
             Contributing: Contribuir
-            Guide with analogies: Guía con analogías
           nav_translations:
             Início: Home
             Por que o Reversa: Why Reversa
@@ -104,8 +103,8 @@ plugins:
             Visão geral: Overview
             Reversa (Orquestrador): Reversa (Orchestrator)
             Saídas geradas: Generated outputs
+            Desenvolvendo com as specs: Developing from specs
             Contribuindo: Contributing
-            Guia com analogias: Guide with analogies
 
 nav:
   - Início: index.md
@@ -121,16 +120,14 @@ nav:
     - Visão geral: agentes/index.md
     - Reversa (Orquestrador): agentes/reversa.md
     - Scout: agentes/scout.md
-    - Arqueólogo: agentes/arqueologo.md
-    - Detetive: agentes/detetive.md
-    - Arquiteto: agentes/arquiteto.md
-    - Redator: agentes/redator.md
-    - Revisor: agentes/revisor.md
-    - Tracer: agentes/tracer.md
+    - Archaeologist: agentes/arqueologo.md
+    - Detective: agentes/detetive.md
+    - Architect: agentes/arquiteto.md
+    - Writer: agentes/redator.md
+    - Reviewer: agentes/revisor.md
     - Visor: agentes/visor.md
     - Data Master: agentes/data-master.md
     - Design System: agentes/design-system.md
-    - Chronicler: agentes/chronicler.md
-    - Guia com analogias: agentes/agents-help.md
   - Saídas geradas: saidas/index.md
+  - Desenvolvendo com as specs: desenvolvendo-com-specs.md
   - Contribuindo: contribuindo.md

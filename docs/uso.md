@@ -41,6 +41,8 @@ You review and approve the plan
         ↓
 Scout maps the project surface
         ↓
+Reversa presents the Scout summary and you choose the documentation level
+        ↓
 Archaeologist analyzes module by module
         ↓
 Detective and Architect interpret what was found
@@ -80,13 +82,27 @@ No drama. No loss. Just continue later.
 
 ---
 
+## Documentation level
+
+After the Scout finishes, Reversa presents a summary of what it found (number of modules, integrations, whether a database is present) and asks which volume of documentation you want for the project:
+
+| Level | When to use | What it generates |
+|-------|-------------|-------------------|
+| **Essential** | Simple projects, scripts, prototypes | Core artifacts: code analysis, domain, architecture, SDD specs |
+| **Complete** | Medium projects, small teams (default) | Everything in essential + C4 diagrams, ERD, ADRs, OpenAPI, user stories and traceability matrices |
+| **Detailed** | Enterprise systems, multiple teams | Everything in complete + per-function flowcharts, expanded ADRs, deployment diagram and mandatory cross-review |
+
+The choice is saved in `.reversa/state.json` and all subsequent agents respect it automatically. If you need to adjust it after the analysis has started, just edit the `doc_level` field in that file.
+
+---
+
 ## Activating a specific agent manually
 
 If you want to run an agent standalone, without going through the orchestrator:
 
 ```
 /reversa-scout
-/reversa-detetive
+/reversa-detective
 /reversa-data-master
 ```
 

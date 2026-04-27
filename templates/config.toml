@@ -16,12 +16,11 @@ folder = "_reversa_sdd"
 [agents]
 installed = [
   "reversa-scout",
-  "reversa-arqueologo",
-  "reversa-detetive",
-  "reversa-arquiteto",
-  "reversa-redator",
-  "reversa-revisor",
-  "reversa-tracer",
+  "reversa-archaeologist",
+  "reversa-detective",
+  "reversa-architect",
+  "reversa-writer",
+  "reversa-reviewer",
   "reversa-visor",
   "reversa-data-master",
   "reversa-design-system"
@@ -32,3 +31,4 @@ installed = []
 
 [analysis]
 answer_mode = "chat"
+doc_level = "completo"

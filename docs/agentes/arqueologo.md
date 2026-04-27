@@ -1,8 +1,13 @@
 # Archaeologist
 
-**Command:** `/reversa-arqueologo`
+**Command:** `/reversa-archaeologist`
 **Phase:** 2 - Excavation
-**Analogy:** The excavator
+
+---
+
+## ⛏️ The excavator
+
+The archaeologist digs through the terrain patiently, layer by layer. Catalogs every artifact found: size, material, location, shape. Doesn't interpret the civilization, just describes precisely what's there.
 
 ---
 

@@ -2,7 +2,12 @@
 
 **Command:** `/reversa-scout`
 **Phase:** 1 - Reconnaissance
-**Analogy:** The real estate agent
+
+---
+
+## 🗺️ The real estate agent
+
+The agent does the first tour of the property. Doesn't open drawers, doesn't read documents, doesn't touch anything. Just maps: how many rooms, which neighborhood, what facilities exist, what's the general condition.
 
 ---
 

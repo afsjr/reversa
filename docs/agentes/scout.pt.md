@@ -2,7 +2,12 @@
 
 **Comando:** `/reversa-scout`
 **Fase:** 1 - Reconhecimento
-**Analogia:** O corretor de imóveis
+
+---
+
+## 🗺️ O corretor de imóveis
+
+O corretor faz o primeiro tour no imóvel. Não abre gavetas, não lê documentos, não mexe em nada. Só mapeia: quantos cômodos, qual o bairro, que instalações existem, qual o estado geral.
 
 ---
 

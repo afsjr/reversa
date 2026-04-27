@@ -15,7 +15,7 @@ O Reversa guarda toda a sua configuração e estado da análise dentro da pasta 
 ├── version             ← versão instalada do Reversa
 ├── context/
 │   ├── surface.json    ← dados gerados pelo Scout
-│   └── modules.json    ← dados gerados pelo Arqueólogo
+│   └── modules.json    ← dados gerados pelo Archaeologist
 └── _config/
     ├── manifest.yaml           ← metadados da instalação
     └── files-manifest.json     ← hashes SHA-256 para updates seguros
@@ -33,7 +33,7 @@ name = "meu-projeto"
 language = "pt-br"
 
 [agents]
-installed = ["reversa", "scout", "arqueologo", "detetive", "arquiteto", "redator", "revisor"]
+installed = ["reversa", "scout", "archaeologist", "detective", "architect", "writer", "reviewer"]
 
 [output]
 folder = "_reversa_sdd"
@@ -71,7 +71,7 @@ Você pode editá-lo diretamente: reordenar tarefas, remover módulos que não q
 
 ## `state.json`: estado da análise
 
-Mantido automaticamente pelo Reversa. Registra a fase atual, quais agentes já rodaram e o progresso do Redator.
+Mantido automaticamente pelo Reversa. Registra a fase atual, quais agentes já rodaram e o progresso do Writer.
 
 Você pode abrir para ver como está, mas não precisa editar manualmente. Se algo der errado e você precisar resetar uma fase específica, é aqui que você procuraria.
 
@@ -79,11 +79,25 @@ Você pode abrir para ver como está, mas não precisa editar manualmente. Se al
 
 ## Modo de resposta (`answer_mode`)
 
-Controla como o Revisor levanta perguntas de validação para você:
+Controla como o Reviewer levanta perguntas de validação para você:
 
 | Modo | Comportamento |
 |------|---------------|
 | `chat` (padrão) | As perguntas aparecem no chat, uma a uma. Você responde na conversa. |
-| `file` | O Revisor gera um arquivo `_reversa_sdd/questions.md` com todas as perguntas. Você preenche e avisa quando terminar. |
+| `file` | O Reviewer gera um arquivo `_reversa_sdd/questions.md` com todas as perguntas. Você preenche e avisa quando terminar. |
 
 O modo `file` é útil quando há muitas perguntas e você quer responder com calma, fora da sessão.
+
+---
+
+## Nível de documentação (`doc_level`)
+
+Define o volume de artefatos que cada agente vai gerar durante a análise. **Não é configurado na instalação:** o Reversa pergunta no início da primeira análise, após o Scout mapear o projeto, para que você decida com informação real na mão.
+
+| Valor | Quando usar | Artefatos gerados |
+|-------|-------------|-------------------|
+| `essencial` | Projetos simples, scripts, protótipos | Análise de código, domínio, arquitetura (C4 contexto), specs SDD |
+| `completo` | Projetos médios, equipes pequenas (padrão) | Tudo do essencial + diagramas C4 completos, ERD, ADRs, OpenAPI, user stories, matrizes de rastreabilidade |
+| `detalhado` | Sistemas enterprise, alta criticidade | Tudo do completo + flowcharts por função, ADRs expandidos, diagrama de deployment, revisão cruzada obrigatória |
+
+A escolha fica salva em `.reversa/state.json` no campo `doc_level`. Você pode editá-lo manualmente a qualquer momento para ajustar o nível no meio de uma análise.

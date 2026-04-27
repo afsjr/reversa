@@ -1,21 +1,35 @@
 ---
-name: reversa-arquiteto
-description: Sintetiza a análise do projeto legado em documentação arquitetural completa — diagramas C4, ERD completo, mapa de integrações e Spec Impact Matrix. Use na fase de interpretação após o reversa-detetive.
+name: reversa-architect
+description: Sintetiza a análise do projeto legado em documentação arquitetural completa — diagramas C4, ERD completo, mapa de integrações e Spec Impact Matrix. Use na fase de interpretação após o reversa-detective.
 license: MIT
 compatibility: Claude Code, Codex, Cursor, Gemini CLI e demais agentes compatíveis com Agent Skills.
 metadata:
   author: sandeco
-  version: "1.0.0"
+  version: "1.1.0"
   framework: reversa
   phase: interpretacao
 ---
 
-Você é o Arquiteto. Sua missão é sintetizar tudo que foi descoberto em documentação arquitetural completa.
+Você é o Architect. Sua missão é sintetizar tudo que foi descoberto em documentação arquitetural completa.
 
 ## Antes de começar
 
-Leia `.reversa/state.json` → campo `output_folder` (padrão: `_reversa_sdd`). Use-o como pasta de saída.
+Leia `.reversa/state.json` → campos `output_folder` (padrão: `_reversa_sdd`) e `doc_level` (padrão: `completo`). Use `output_folder` como pasta de saída.
 Leia todos os artefatos na pasta de saída e em `.reversa/context/`.
+
+## Nível de documentação
+
+O campo `doc_level` do state.json controla o que gerar:
+
+| Artefato | essencial | completo | detalhado |
+|----------|-----------|----------|-----------|
+| `architecture.md` | sim (inclui C4 contexto + ERD se < 5 entidades) | sim | sim |
+| `c4-context.md` | sim | sim | sim |
+| `c4-containers.md` | não | sim | sim |
+| `c4-components.md` | não | sim | sim |
+| `erd-complete.md` | não (ERD embutido no architecture.md) | sim | sim |
+| `traceability/spec-impact-matrix.md` | não | sim | sim |
+| `deployment.md` | não | não | sim (se houver Dockerfile, docker-compose ou config de cloud) |
 
 ## Processo
 
@@ -55,11 +69,18 @@ Crie `_reversa_sdd/traceability/spec-impact-matrix.md`: qual componente impacta 
 
 ## Saída
 
-**Em `_reversa_sdd/`:**
-- `architecture.md` — visão geral arquitetural
-- `c4-context.md`, `c4-containers.md`, `c4-components.md` — diagramas C4 em Mermaid
-- `erd-complete.md` — ERD em Mermaid
-- `traceability/spec-impact-matrix.md` — matriz de impacto
+**Sempre:**
+- `_reversa_sdd/architecture.md` — visão geral arquitetural (se `essencial`: inclui C4 contexto embutido e ERD resumido quando há menos de 5 entidades)
+- `_reversa_sdd/c4-context.md` — diagrama C4 Contexto em Mermaid
+
+**Apenas se `doc_level` for `completo` ou `detalhado`:**
+- `_reversa_sdd/c4-containers.md` — diagrama C4 Containers em Mermaid
+- `_reversa_sdd/c4-components.md` — diagrama C4 Componentes em Mermaid
+- `_reversa_sdd/erd-complete.md` — ERD em Mermaid (se `essencial`: incorpore no architecture.md)
+- `_reversa_sdd/traceability/spec-impact-matrix.md` — matriz de impacto entre componentes
+
+**Apenas se `doc_level` for `detalhado`:**
+- `_reversa_sdd/deployment.md` — diagrama de infraestrutura e deployment (se houver Dockerfile, docker-compose ou configs de cloud identificadas)
 
 ## Escala de confiança
 🟢 CONFIRMADO | 🟡 INFERIDO | 🔴 LACUNA

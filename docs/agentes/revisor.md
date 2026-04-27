@@ -1,8 +1,13 @@
 # Reviewer
 
-**Command:** `/reversa-revisor`
+**Command:** `/reversa-reviewer`
 **Phase:** 5 - Review
-**Analogy:** The spec reviewer
+
+---
+
+## ⚖️ The spec reviewer
+
+The Reviewer takes the Writer's contracts and tries to punch holes in them: *"This is a contradiction. This point has no proof. This rule disappears if the user does X."* Not to destroy, but to ensure what's left standing is solid.
 
 ---
 

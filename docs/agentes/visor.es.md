@@ -2,7 +2,12 @@
 
 **Comando:** `/reversa-visor`
 **Fase:** Cualquiera
-**Analogía:** El ilustrador forense
+
+---
+
+## 🖼️ El ilustrador forense
+
+El ilustrador forense trabaja solo con imágenes. Recibe screenshots del sistema y reconstruye fielmente la interfaz: pantallas, formularios, flujos de navegación. No necesita que el sistema esté en ejecución. Solo las fotos.
 
 ---
 

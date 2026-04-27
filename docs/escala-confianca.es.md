@@ -43,4 +43,4 @@ Con la escala de confianza, sabes exactamente dónde confiar y dónde cuestionar
 
 ## Cómo se resuelven las brechas
 
-El Revisor recopila todas las brechas 🔴 y las presenta como preguntas para que respondas. Después de responder, actualiza las specs: 🔴 se convierte en 🟢 si confirmaste con evidencia, o 🟡 si diste una respuesta pero sin certeza absoluta.
+El Reviewer recopila todas las brechas 🔴 y las presenta como preguntas para que respondas. Después de responder, actualiza las specs: 🔴 se convierte en 🟢 si confirmaste con evidencia, o 🟡 si diste una respuesta pero sin certeza absoluta.

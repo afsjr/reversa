@@ -2,7 +2,12 @@
 
 **Comando:** `/reversa`
 **Fase:** Orquestração
-**Analogia:** O regente de orquestra
+
+---
+
+## 🎼 O regente de orquestra
+
+Um regente não toca nenhum instrumento. Ele conhece a partitura inteira e diz quem entra quando, em que ordem, em que ritmo. Sem ele, cada músico tocaria sua parte sem se conectar com os outros. Com ele, tudo vira música.
 
 ---
 

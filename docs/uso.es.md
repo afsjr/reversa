@@ -41,13 +41,15 @@ Revisas y apruebas el plan
         ↓
 Scout mapea la superficie del proyecto
         ↓
-Arqueólogo analiza módulo por módulo
+Reversa presenta el resumen del Scout y eliges el nivel de documentación
         ↓
-Detective y Arquitecto interpretan lo encontrado
+Archaeologist analiza módulo por módulo
         ↓
-Redactor genera las especificaciones (una a la vez, con tu aprobación)
+Detective y Architect interpretan lo encontrado
         ↓
-Revisor revisa todo y plantea preguntas de validación
+Writer genera las especificaciones (una a la vez, con tu aprobación)
+        ↓
+Reviewer revisa todo y plantea preguntas de validación
         ↓
 Especificaciones listas en _reversa_sdd/
 ```
@@ -66,7 +68,7 @@ Depende del tamaño del proyecto, pero una regla general:
 | Mediano (10 a 30 módulos) | 5 a 10 sesiones |
 | Grande (30+ módulos) | 10+ sesiones |
 
-El Arqueólogo analiza un módulo por sesión a propósito, para conservar contexto. Para proyectos grandes retomarás varias veces, pero cada retomada es automática y sin pérdida de progreso.
+El Archaeologist analiza un módulo por sesión a propósito, para conservar contexto. Para proyectos grandes retomarás varias veces, pero cada retomada es automática y sin pérdida de progreso.
 
 ---
 
@@ -80,13 +82,27 @@ Sin drama. Sin pérdida. Solo continúa después.
 
 ---
 
+## Nivel de documentación
+
+Después de que el Scout termina, Reversa presenta un resumen de lo que encontró (cantidad de módulos, integraciones, presencia de base de datos) y pregunta qué volumen de documentación quieres para el proyecto:
+
+| Nivel | Cuándo usar | Qué genera |
+|-------|-------------|------------|
+| **Esencial** | Proyectos simples, scripts, prototipos | Artefactos principales: análisis de código, dominio, arquitectura, specs SDD |
+| **Completo** | Proyectos medianos, equipos pequeños (por defecto) | Todo lo esencial + diagramas C4, ERD, ADRs, OpenAPI, user stories y matrices de trazabilidad |
+| **Detallado** | Sistemas enterprise, múltiples equipos | Todo lo completo + flowcharts por función, ADRs expandidos, diagrama de deployment y revisión cruzada obligatoria |
+
+La elección se guarda en `.reversa/state.json` y todos los agentes siguientes la respetan automáticamente. Si necesitas ajustarla después de iniciado el análisis, edita el campo `doc_level` en ese archivo.
+
+---
+
 ## Activar un agente específico manualmente
 
 Si quieres ejecutar un agente suelto, sin pasar por el orquestador:
 
 ```
 /reversa-scout
-/reversa-detetive
+/reversa-detective
 /reversa-data-master
 ```
 

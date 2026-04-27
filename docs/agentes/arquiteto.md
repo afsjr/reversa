@@ -1,8 +1,13 @@
 # Architect
 
-**Command:** `/reversa-arquiteto`
+**Command:** `/reversa-architect`
 **Phase:** 3 - Interpretation
-**Analogy:** The cartographer
+
+---
+
+## 📐 The cartographer
+
+The cartographer visits a territory and produces formal maps: floor plan, elevation map, structural plan. Someone who never set foot there can understand everything just by looking at the maps.
 
 ---
 

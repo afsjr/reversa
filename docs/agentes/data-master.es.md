@@ -2,7 +2,12 @@
 
 **Comando:** `/reversa-data-master`
 **Fase:** Cualquiera
-**Analogía:** El geólogo
+
+---
+
+## 🗄️ El geólogo
+
+El geólogo mapea el subsuelo: la capa que nadie ve pero que lo sostiene todo. Tablas, relaciones, constraints, triggers, procedures. Los cimientos invisibles sobre los que se construye la aplicación.
 
 ---
 

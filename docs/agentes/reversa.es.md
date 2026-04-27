@@ -2,7 +2,12 @@
 
 **Comando:** `/reversa`
 **Fase:** Orquestación
-**Analogía:** El director de orquesta
+
+---
+
+## 🎼 El director de orquesta
+
+Un director no toca ningún instrumento. Conoce la partitura completa y dice quién entra cuándo, en qué orden, a qué ritmo. Sin él, cada músico tocaría su parte sin conectarse con los demás. Con él, todo se convierte en música.
 
 ---
 

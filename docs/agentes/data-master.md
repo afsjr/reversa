@@ -2,7 +2,12 @@
 
 **Command:** `/reversa-data-master`
 **Phase:** Any
-**Analogy:** The geologist
+
+---
+
+## 🗄️ The geologist
+
+The geologist maps the underground: the layer nobody sees but that supports everything. Tables, relationships, constraints, triggers, stored procedures. The invisible foundation on which the application is built.
 
 ---
 

@@ -1,14 +1,19 @@
-# Redactor
+# Writer
 
-**Comando:** `/reversa-redator`
+**Comando:** `/reversa-writer`
 **Fase:** 4 - Generación
-**Analogía:** El notario
+
+---
+
+## 📝 El notario
+
+El notario transforma lo descubierto en contratos formales, precisos y trazables. Cada cláusula tiene nivel de certeza declarado. El documento vale como contrato: un agente de IA puede reimplementar el sistema a partir de él.
 
 ---
 
 ## Qué hace
 
-El Redactor transforma lo descubierto en las tres fases anteriores en contratos formales: precisos, trazables y lo suficientemente detallados para que un agente de IA, sin acceso al código original, pueda reimplementar la funcionalidad fielmente.
+El Writer transforma lo descubierto en las tres fases anteriores en contratos formales: precisos, trazables y lo suficientemente detallados para que un agente de IA, sin acceso al código original, pueda reimplementar la funcionalidad fielmente.
 
 Las specs no son documentación para que los humanos lean en una tarde tranquila. Son contratos operacionales.
 
@@ -16,7 +21,7 @@ Las specs no son documentación para que los humanos lean en una tarde tranquila
 
 ## El flujo de trabajo
 
-El Redactor nunca genera todo de una vez. Monta un plan, lo presenta para tu aprobación, y luego genera un archivo a la vez esperando tu confirmación antes de continuar. Esto permite revisión incremental.
+El Writer nunca genera todo de una vez. Monta un plan, lo presenta para tu aprobación, y luego genera un archivo a la vez esperando tu confirmación antes de continuar. Esto permite revisión incremental.
 
 ---
 

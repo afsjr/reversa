@@ -9,11 +9,11 @@ O Reversa transforma um sistema legado em especificações executáveis em 5 fas
 ```
 Fase 1          Fase 2        Fase 3              Fase 4        Fase 5
 Reconhecimento  Escavação     Interpretação       Geração       Revisão
-   Scout        Arqueólogo    Detetive            Redator       Revisor
-                               Arquiteto
+   Scout        Archaeologist    Detective            Writer       Reviewer
+                               Architect
 ```
 
-**Agentes independentes** que rodam em qualquer fase: **Visor**, **Data Master**, **Design System**, **Tracer**
+**Agentes independentes** que rodam em qualquer fase: **Visor**, **Data Master**, **Design System**
 
 ---
 
@@ -31,15 +31,17 @@ O que ele produz:
 
 Depois que o Scout termina, o Reversa usa o `surface.json` para personalizar a Fase 2: em vez de uma tarefa genérica "analisar o código", o plano vira uma tarefa por módulo identificado.
 
+Também é nesse momento que o Reversa apresenta o resumo do Scout e pergunta o **nível de documentação** (`doc_level`): essencial, completo ou detalhado. A escolha define quais artefatos cada agente vai gerar nas fases seguintes — veja [Como usar](uso.md#nível-de-documentação) para a tabela completa.
+
 ---
 
 ## Fase 2: Escavação
 
-**Agente:** Arqueólogo
+**Agente:** Archaeologist
 
-O Arqueólogo escava o terreno módulo a módulo. Com paciência e precisão, cataloga cada artefato: funções, algoritmos, estruturas de dados, fluxos de controle. Ele não interpreta nem julga. Só descreve com precisão o que está lá.
+O Archaeologist escava o terreno módulo a módulo. Com paciência e precisão, cataloga cada artefato: funções, algoritmos, estruturas de dados, fluxos de controle. Ele não interpreta nem julga. Só descreve com precisão o que está lá.
 
-**Importante:** o Arqueólogo roda um módulo por sessão, de propósito. Projetos grandes têm muitos módulos, e tentar analisar tudo de uma vez consome contexto e reduz a qualidade da análise.
+**Importante:** o Archaeologist roda um módulo por sessão, de propósito. Projetos grandes têm muitos módulos, e tentar analisar tudo de uma vez consome contexto e reduz a qualidade da análise.
 
 O que ele produz:
 
@@ -52,13 +54,13 @@ O que ele produz:
 
 ## Fase 3: Interpretação
 
-**Agentes:** Detetive + Arquiteto
+**Agentes:** Detective + Architect
 
 Aqui a análise deixa de ser descritiva e vira interpretativa. Dois agentes trabalham em paralelo nessa fase.
 
-**O Detetive** é o Sherlock Holmes do time. Olha para o que o Arqueólogo catalogou e pergunta: *"Mas por que isso está aqui? Quem tomou essa decisão? O que o histórico git revela?"*. Extrai regras de negócio implícitas, ADRs retroativos, máquinas de estado e matrizes de permissão.
+**O Detective** é o Sherlock Holmes do time. Olha para o que o Archaeologist catalogou e pergunta: *"Mas por que isso está aqui? Quem tomou essa decisão? O que o histórico git revela?"*. Extrai regras de negócio implícitas, ADRs retroativos, máquinas de estado e matrizes de permissão.
 
-**O Arquiteto** é o cartógrafo. Sintetiza tudo em documentação arquitetural formal: diagramas C4 nos três níveis (Contexto, Containers, Componentes), ERD completo, mapa de integrações, dívidas técnicas.
+**O Architect** é o cartógrafo. Sintetiza tudo em documentação arquitetural formal: diagramas C4 nos três níveis (Contexto, Containers, Componentes), ERD completo, mapa de integrações, dívidas técnicas.
 
 O que eles produzem:
 
@@ -74,13 +76,13 @@ O que eles produzem:
 
 ## Fase 4: Geração
 
-**Agente:** Redator
+**Agente:** Writer
 
-O Redator é o tabelião do time. Transforma tudo que foi descoberto nas fases anteriores em contratos formais: especificações SDD por componente, specs OpenAPI para as APIs, user stories para os fluxos de usuário.
+O Writer é o tabelião do time. Transforma tudo que foi descoberto nas fases anteriores em contratos formais: especificações SDD por componente, specs OpenAPI para as APIs, user stories para os fluxos de usuário.
 
 Cada afirmação nas specs é marcada com a [escala de confiança](escala-confianca.md): 🟢 CONFIRMADO, 🟡 INFERIDO ou 🔴 LACUNA.
 
-O Redator não gera tudo de uma vez. Ele monta um plano, apresenta para você aprovar, e depois gera um arquivo por vez, esperando confirmação antes de continuar. Isso permite revisão incremental e evita desperdício de contexto.
+O Writer não gera tudo de uma vez. Ele monta um plano, apresenta para você aprovar, e depois gera um arquivo por vez, esperando confirmação antes de continuar. Isso permite revisão incremental e evita desperdício de contexto.
 
 O que ele produz:
 
@@ -93,13 +95,13 @@ O que ele produz:
 
 ## Fase 5: Revisão
 
-**Agente:** Revisor
+**Agente:** Reviewer
 
-O Revisor tenta furar as specs. Encontra contradições internas, conflitos entre specs diferentes, afirmações marcadas como 🟢 que são na verdade inferências, comportamentos óbvios não especificados.
+O Reviewer tenta furar as specs. Encontra contradições internas, conflitos entre specs diferentes, afirmações marcadas como 🟢 que são na verdade inferências, comportamentos óbvios não especificados.
 
 Ele também coleta as lacunas 🔴 que só você pode resolver e apresenta como perguntas para validação humana. Depois que você responde, ele atualiza as specs e gera o relatório final de confiança.
 
-Bônus: se o plugin do Codex estiver ativo na sessão, o Revisor pode solicitar uma revisão cruzada independente antes de fazer a sua própria análise.
+Bônus: se o plugin do Codex estiver ativo na sessão, o Reviewer pode solicitar uma revisão cruzada independente antes de fazer a sua própria análise.
 
 O que ele produz:
 
@@ -119,5 +121,3 @@ Esses agentes não pertencem a uma fase específica e podem ser acionados a qual
 | **Visor** | Quando você tiver screenshots do sistema disponíveis |
 | **Data Master** | Quando houver DDL, migrations ou modelos ORM para analisar |
 | **Design System** | Quando houver arquivos CSS, temas ou screenshots de interface |
-| **Tracer** | Quando existirem lacunas 🔴 que só o sistema em execução pode resolver |
-| **Chronicler** | Para documentar alterações de código feitas durante o desenvolvimento |

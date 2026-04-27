@@ -28,51 +28,43 @@ O corretor faz o primeiro tour no imóvel. Não abre gavetas, não lê documento
 
 ---
 
-### ⛏️ Arqueólogo: o escavador
+### ⛏️ Archaeologist: o escavador
 
 O arqueólogo escava o terreno com paciência, camada por camada. Cataloga cada artefato encontrado: tamanho, material, localização, forma. Ele não interpreta a civilização, só descreve com precisão o que está lá.
 
-> Use o Arqueólogo para analisar o código módulo a módulo. Roda um módulo por sessão para economizar tokens.
+> Use o Archaeologist para analisar o código módulo a módulo. Roda um módulo por sessão para economizar tokens.
 
 ---
 
-### 🔍 Detetive: Sherlock Holmes
+### 🔍 Detective: Sherlock Holmes
 
 Sherlock Holmes chega depois do arqueólogo. Olha para os artefatos catalogados e pergunta: *"Mas por que isso está aqui? Quem colocou? O que isso revela sobre quem viveu aqui?"* Ele não escava. Ele interpreta.
 
-> Use o Detetive após o Arqueólogo. Ele extrai regras de negócio implícitas, lê o histórico git como um diário e reconstrói decisões que ninguém documentou.
+> Use o Detective após o Archaeologist. Ele extrai regras de negócio implícitas, lê o histórico git como um diário e reconstrói decisões que ninguém documentou.
 
 ---
 
-### 📐 Arquiteto: o cartógrafo
+### 📐 Architect: o cartógrafo
 
 O cartógrafo visita um território e produz mapas formais: planta baixa, mapa de elevação, planta estrutural. Alguém que nunca pisou lá consegue entender tudo olhando para os mapas.
 
-> Use o Arquiteto após o Detetive. Ele sintetiza tudo em diagramas C4, ERD completo e mapa de integrações.
+> Use o Architect após o Detective. Ele sintetiza tudo em diagramas C4, ERD completo e mapa de integrações.
 
 ---
 
-### 📝 Redator: o tabelião
+### 📝 Writer: o tabelião
 
 O tabelião transforma o que foi descoberto em contratos formais, precisos e rastreáveis. Cada cláusula tem grau de certeza declarado. O documento vale como contrato: um agente de IA pode reimplementar o sistema a partir dele.
 
-> Use o Redator após o Arquiteto. Ele gera specs SDD, OpenAPI e user stories com rastreabilidade de código.
+> Use o Writer após o Architect. Ele gera specs SDD, OpenAPI e user stories com rastreabilidade de código.
 
 ---
 
-### ⚖️ Revisor: o revisor de specs
+### ⚖️ Reviewer: o revisor de specs
 
-O Revisor pega os contratos do Redator e tenta furar: *"Isso é contradição. Esse ponto não tem prova. Essa regra some se o usuário fizer X."* Ele não quer destruir, quer garantir que o que ficou de pé seja sólido.
+O Reviewer pega os contratos do Writer e tenta furar: *"Isso é contradição. Esse ponto não tem prova. Essa regra some se o usuário fizer X."* Ele não quer destruir, quer garantir que o que ficou de pé seja sólido.
 
-> Use o Revisor após o Redator. Ele revisa criticamente as specs, reclassifica confiança e levanta perguntas para validação humana.
-
----
-
-### 🧪 Tracer: o investigador de campo
-
-Quando a análise estática não responde, o investigador vai ao local. Observa logs ao vivo, consulta o banco real (só SELECT), pede para você executar fluxos específicos. Ele só observa, nunca modifica nada.
-
-> Use o Tracer quando houver lacunas 🔴 que só o sistema em execução pode resolver.
+> Use o Reviewer após o Writer. Ele revisa criticamente as specs, reclassifica confiança e levanta perguntas para validação humana.
 
 ---
 
@@ -100,22 +92,14 @@ O estilista cataloga o guarda-roupa: paleta de cores, tipografia, espaçamentos,
 
 ---
 
-### 📓 Chronicler: o escriba
-
-O escriba captura o conhecimento sobre uma mudança logo depois que ela acontece, antes que o contexto se perca. Duas perguntas rápidas e a alteração está documentada para sempre.
-
-> Use o Chronicler logo após uma alteração importante durante o desenvolvimento.
-
----
-
 ## Sequência recomendada
 
 ```
 /reversa → orquestra tudo automaticamente
 
 Ou manualmente:
-Scout → Arqueólogo (N sessões) → Detetive → Arquiteto → Redator → Revisor
+Scout → Archaeologist (N sessões) → Detective → Architect → Writer → Reviewer
 
 Opcionais em qualquer fase:
-Visor · Data Master · Design System · Tracer · Chronicler
+Visor · Data Master · Design System
 ```

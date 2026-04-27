@@ -33,7 +33,7 @@ name = "my-project"
 language = "en"
 
 [agents]
-installed = ["reversa", "scout", "arqueologo", "detetive", "arquiteto", "redator", "revisor"]
+installed = ["reversa", "scout", "archaeologist", "detective", "architect", "writer", "reviewer"]
 
 [output]
 folder = "_reversa_sdd"
@@ -79,3 +79,17 @@ Controls how the Reviewer raises validation questions for you:
 | `file` | The Reviewer generates a `_reversa_sdd/questions.md` file with all questions. You fill it in and notify when done. |
 
 The `file` mode is useful when there are many questions and you want to answer at your own pace, outside the session.
+
+---
+
+## Documentation level (`doc_level`)
+
+Defines the volume of artifacts each agent generates during the analysis. **Not configured at install time:** Reversa asks at the start of the first analysis session, after the Scout maps the project, so you can decide with real information in hand.
+
+| Value | When to use | Artifacts generated |
+|-------|-------------|---------------------|
+| `essencial` | Simple projects, scripts, prototypes | Code analysis, domain, architecture (C4 context), SDD specs |
+| `completo` | Medium projects, small teams (default) | Everything in essential + full C4 diagrams, ERD, ADRs, OpenAPI, user stories, traceability matrices |
+| `detalhado` | Enterprise systems, high criticality | Everything in complete + per-function flowcharts, expanded ADRs, deployment diagram, mandatory cross-review |
+
+The choice is saved in `.reversa/state.json` under the `doc_level` field. You can edit it manually at any time to adjust the level mid-analysis.

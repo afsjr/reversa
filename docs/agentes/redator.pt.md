@@ -1,14 +1,19 @@
-# Redator
+# Writer
 
-**Comando:** `/reversa-redator`
+**Comando:** `/reversa-writer`
 **Fase:** 4 - Geração
-**Analogia:** O tabelião
+
+---
+
+## 📝 O tabelião
+
+O tabelião transforma o que foi descoberto em contratos formais, precisos e rastreáveis. Cada cláusula tem grau de certeza declarado. O documento vale como contrato: um agente de IA pode reimplementar o sistema a partir dele.
 
 ---
 
 ## O que faz
 
-O Redator transforma o que foi descoberto nas três fases anteriores em contratos formais: precisos, rastreáveis e suficientemente detalhados para que um agente de IA, sem acesso ao código original, possa reimplementar a funcionalidade com fidelidade.
+O Writer transforma o que foi descoberto nas três fases anteriores em contratos formais: precisos, rastreáveis e suficientemente detalhados para que um agente de IA, sem acesso ao código original, possa reimplementar a funcionalidade com fidelidade.
 
 Specs não são documentação para humanos lerem numa tarde tranquila. São contratos operacionais.
 
@@ -16,11 +21,11 @@ Specs não são documentação para humanos lerem numa tarde tranquila. São con
 
 ## O fluxo de trabalho
 
-O Redator nunca gera tudo de uma vez. Projetos grandes têm muitos componentes, e gerar tudo em uma resposta consome contexto excessivo e impede revisão incremental. O fluxo é assim:
+O Writer nunca gera tudo de uma vez. Projetos grandes têm muitos componentes, e gerar tudo em uma resposta consome contexto excessivo e impede revisão incremental. O fluxo é assim:
 
 ### 1. Montar e apresentar o plano
 
-Antes de gerar qualquer arquivo, o Redator lê todos os artefatos das fases anteriores e monta uma lista completa do que vai gerar:
+Antes de gerar qualquer arquivo, o Writer lê todos os artefatos das fases anteriores e monta uma lista completa do que vai gerar:
 
 ```
 📋 Plano de geração: 12 itens

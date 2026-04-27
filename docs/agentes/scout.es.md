@@ -2,7 +2,12 @@
 
 **Comando:** `/reversa-scout`
 **Fase:** 1 - Reconocimiento
-**Analogía:** El agente inmobiliario
+
+---
+
+## 🗺️ El agente inmobiliario
+
+El agente hace el primer tour de la propiedad. No abre cajones, no lee documentos, no toca nada. Solo mapea: cuántas habitaciones, qué instalaciones existen, cuál es el estado general.
 
 ---
 

@@ -15,7 +15,7 @@ Reversa guarda toda su configuración y estado del análisis dentro de la carpet
 ├── version             ← versión instalada de Reversa
 ├── context/
 │   ├── surface.json    ← datos generados por Scout
-│   └── modules.json    ← datos generados por Arqueólogo
+│   └── modules.json    ← datos generados por Archaeologist
 └── _config/
     ├── manifest.yaml           ← metadatos de la instalación
     └── files-manifest.json     ← hashes SHA-256 para updates seguros
@@ -31,7 +31,7 @@ name = "mi-proyecto"
 language = "es"
 
 [agents]
-installed = ["reversa", "scout", "arqueologo", "detetive", "arquiteto", "redator", "revisor"]
+installed = ["reversa", "scout", "archaeologist", "detective", "architect", "writer", "reviewer"]
 
 [output]
 folder = "_reversa_sdd"
@@ -60,4 +60,18 @@ answer_mode = "chat"  # "chat" o "file"
 | Modo | Comportamiento |
 |------|----------------|
 | `chat` (por defecto) | Las preguntas aparecen en el chat, una a una. Respondes en la conversación. |
-| `file` | El Revisor genera un archivo `_reversa_sdd/questions.md` con todas las preguntas. Lo rellenas y avisas cuando termines. |
+| `file` | El Reviewer genera un archivo `_reversa_sdd/questions.md` con todas las preguntas. Lo rellenas y avisas cuando termines. |
+
+---
+
+## Nivel de documentación (`doc_level`)
+
+Define el volumen de artefactos que cada agente genera durante el análisis. **No se configura en la instalación:** Reversa lo pregunta al inicio del primer análisis, después de que el Scout mapea el proyecto, para que decidas con información real.
+
+| Valor | Cuándo usar | Artefactos generados |
+|-------|-------------|----------------------|
+| `essencial` | Proyectos simples, scripts, prototipos | Análisis de código, dominio, arquitectura (C4 contexto), specs SDD |
+| `completo` | Proyectos medianos, equipos pequeños (por defecto) | Todo lo esencial + diagramas C4 completos, ERD, ADRs, OpenAPI, user stories, matrices de trazabilidad |
+| `detalhado` | Sistemas enterprise, alta criticidad | Todo lo completo + flowcharts por función, ADRs expandidos, diagrama de deployment, revisión cruzada obligatoria |
+
+La elección se guarda en `.reversa/state.json` en el campo `doc_level`. Puedes editarlo manualmente en cualquier momento para ajustar el nivel durante un análisis en curso.

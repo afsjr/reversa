@@ -2,46 +2,50 @@
 
 Everything Reversa produces goes to the `_reversa_sdd/` folder (or whatever name you configure in `config.toml`). The legacy project is never touched.
 
+The set of artifacts generated depends on the **documentation level** chosen at the start of the analysis:
+
+| Legend | Level |
+|--------|-------|
+| *(all)* | Generated at all 3 levels |
+| *(complete+)* | Only at `complete` and `detailed` levels |
+| *(detailed)* | Only at `detailed` level |
+
 ---
 
 ## Full structure
 
 ```
 _reversa_sdd/
-├── inventory.md              # Project inventory (Scout)
-├── dependencies.md           # Dependencies with versions (Scout)
-├── code-analysis.md          # Technical analysis per module (Archaeologist)
-├── data-dictionary.md        # Complete data dictionary (Archaeologist)
-├── domain.md                 # Glossary and business rules (Detective)
-├── state-machines.md         # State machines in Mermaid (Detective)
-├── permissions.md            # Permission matrix (Detective)
-├── architecture.md           # General architectural overview (Architect)
-├── c4-context.md             # C4 Diagram: Context (Architect)
-├── c4-containers.md          # C4 Diagram: Containers (Architect)
-├── c4-components.md          # C4 Diagram: Components (Architect)
-├── erd-complete.md           # Full ERD in Mermaid (Architect)
-├── confidence-report.md      # Confidence report 🟢🟡🔴 (Reviewer)
-├── gaps.md                   # Unresolved gaps (Reviewer)
-├── questions.md              # Human validation questions (Reviewer)
-├── dynamic.md                # Dynamic analysis findings (Tracer)
-│
-├── sdd/                      # Specs per component (Writer)
+├── inventory.md              # Project inventory — all levels
+├── dependencies.md           # Dependencies with versions — all levels
+├── code-analysis.md          # Technical analysis per module — all levels
+├── data-dictionary.md        # Complete data dictionary — complete+
+├── domain.md                 # Glossary and business rules — all levels
+├── state-machines.md         # State machines in Mermaid — complete+
+├── permissions.md            # Permission matrix — complete+
+├── architecture.md           # General architectural overview — all levels
+├── c4-context.md             # C4 Diagram: Context — all levels
+├── c4-containers.md          # C4 Diagram: Containers — complete+
+├── c4-components.md          # C4 Diagram: Components — complete+
+├── erd-complete.md           # Full ERD in Mermaid — complete+
+├── deployment.md             # Infrastructure diagram — detailed only
+├── confidence-report.md      # Confidence report 🟢🟡🔴 — all levels
+├── gaps.md                   # Unresolved gaps — complete+
+├── questions.md              # Human validation questions — all levels
+├── sdd/                      # Specs per component — all levels
 │   └── [component].md
 │
-├── openapi/                  # API specs (Writer)
+├── openapi/                  # API specs — complete+
 │   └── [api].yaml
 │
-├── user-stories/             # User stories (Writer)
+├── user-stories/             # User stories — complete+
 │   └── [flow].md
 │
-├── adrs/                     # Retroactive architectural decisions (Detective)
+├── adrs/                     # Retroactive architectural decisions — complete+
 │   └── [number]-[title].md
 │
-├── flowcharts/               # Mermaid flowcharts (Archaeologist)
+├── flowcharts/               # Mermaid flowcharts — complete+
 │   └── [module].md
-│
-├── sequences/                # Sequence diagrams (Tracer)
-│   └── [flow].md
 │
 ├── ui/                       # Interface specs (Visor)
 │   ├── inventory.md
@@ -63,12 +67,9 @@ _reversa_sdd/
 │   ├── tokens.md
 │   └── design-system.md
 │
-├── changelog/                # Documented changes (Chronicler)
-│   └── YYYY-MM-DD.md
-│
 └── traceability/
-    ├── spec-impact-matrix.md # Which spec impacts which (Architect)
-    └── code-spec-matrix.md   # Code file to corresponding spec (Writer)
+    ├── spec-impact-matrix.md # Which spec impacts which — complete+
+    └── code-spec-matrix.md   # Code file to corresponding spec — complete+
 ```
 
 ---
@@ -94,3 +95,9 @@ _reversa_sdd/
 # Personal Reversa configuration (never commit)
 .reversa/config.user.toml
 ```
+
+---
+
+## Next step
+
+Specs in hand? See [Developing from specs](../desenvolvendo-com-specs.md) for the recommended order to build the system.

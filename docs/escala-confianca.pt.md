@@ -53,6 +53,6 @@ O código chama a gateway, mas não há tratamento de erro para timeout. O compo
 
 ## Como as lacunas são resolvidas
 
-O Revisor coleta todas as lacunas 🔴 e as apresenta como perguntas para você responder. Depois que você responde, ele atualiza as specs e reclassifica: 🔴 vira 🟢 se você confirmou com evidência, ou 🟡 se você deu uma resposta mas sem certeza absoluta.
+O Reviewer coleta todas as lacunas 🔴 e as apresenta como perguntas para você responder. Depois que você responde, ele atualiza as specs e reclassifica: 🔴 vira 🟢 se você confirmou com evidência, ou 🟡 se você deu uma resposta mas sem certeza absoluta.
 
 Lacunas que não puderam ser respondidas ficam em `_reversa_sdd/gaps.md` para tratamento posterior.

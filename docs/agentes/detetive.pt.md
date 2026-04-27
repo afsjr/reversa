@@ -1,14 +1,19 @@
-# Detetive
+# Detective
 
-**Comando:** `/reversa-detetive`
+**Comando:** `/reversa-detective`
 **Fase:** 3 - Interpretação
-**Analogia:** Sherlock Holmes
+
+---
+
+## 🔍 Sherlock Holmes
+
+Sherlock Holmes chega depois do arqueólogo. Olha para os artefatos catalogados e pergunta: *"Mas por que isso está aqui? Quem colocou? O que isso revela sobre quem viveu aqui?"* Ele não escava. Ele interpreta.
 
 ---
 
 ## O que faz
 
-O Detetive chega depois do Arqueólogo. Olha para tudo que foi catalogado e pergunta: *"Mas por que isso está aqui? Quem colocou isso? O que isso revela sobre quem construiu esse sistema?"*
+O Detective chega depois do Archaeologist. Olha para tudo que foi catalogado e pergunta: *"Mas por que isso está aqui? Quem colocou isso? O que isso revela sobre quem construiu esse sistema?"*
 
 Ele não escava mais código. Ele interpreta o que foi escavado. É o especialista em extrair o conhecimento tácito que nunca foi documentado: as regras de negócio que vivem em condicionais, as decisões arquiteturais que só existem no histórico git, as restrições que aparecem em validações sem comentário nenhum.
 
@@ -18,7 +23,7 @@ Ele não escava mais código. Ele interpreta o que foi escavado. É o especialis
 
 ### Arqueologia git
 
-O Detetive lê o histórico de commits como um diário do projeto:
+O Detective lê o histórico de commits como um diário do projeto:
 
 - Mensagens que revelam decisões de negócio ou técnicas
 - Commits de fix/hotfix: indicam comportamentos que "deveriam funcionar assim mas não funcionavam"
@@ -64,6 +69,6 @@ Para cada entidade com campo de status/estado, o Detetive mapeia:
 
 ## Uma nota sobre confiança
 
-O Detetive é rigoroso com a [escala de confiança](../escala-confianca.md). A maior parte do que ele extrai é 🟡 INFERIDO, e ele sabe disso. A arte é inferir bem e marcar honestamente onde há incerteza.
+O Detective é rigoroso com a [escala de confiança](../escala-confianca.md). A maior parte do que ele extrai é 🟡 INFERIDO, e ele sabe disso. A arte é inferir bem e marcar honestamente onde há incerteza.
 
 Regras de negócio inferidas do código são hipóteses até serem validadas por alguém que conhece o negócio de verdade.

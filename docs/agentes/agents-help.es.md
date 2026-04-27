@@ -26,11 +26,11 @@ El agente hace el primer tour de la propiedad. No abre cajones, no lee documento
 
 ---
 
-### ⛏️ Arqueólogo: el excavador
+### ⛏️ Archaeologist: el excavador
 
 El arqueólogo excava el terreno con paciencia, capa a capa. Cataloga cada artefacto encontrado: tamaño, material, ubicación, forma. No interpreta la civilización, solo describe con precisión lo que hay.
 
-> Usa el Arqueólogo para analizar el código módulo a módulo. Corre un módulo por sesión para conservar tokens.
+> Usa el Archaeologist para analizar el código módulo a módulo. Corre un módulo por sesión para conservar tokens.
 
 ---
 
@@ -38,39 +38,31 @@ El arqueólogo excava el terreno con paciencia, capa a capa. Cataloga cada artef
 
 Sherlock Holmes llega después del arqueólogo. Mira los artefactos catalogados y pregunta: *"¿Por qué está esto aquí? ¿Quién lo puso? ¿Qué revela sobre quién vivió aquí?"* No excava, interpreta.
 
-> Usa el Detective después del Arqueólogo. Extrae reglas de negocio implícitas, lee el historial de git como un diario y reconstruye decisiones que nadie documentó.
+> Usa el Detective después del Archaeologist. Extrae reglas de negocio implícitas, lee el historial de git como un diario y reconstruye decisiones que nadie documentó.
 
 ---
 
-### 📐 Arquitecto: el cartógrafo
+### 📐 Architect: el cartógrafo
 
 El cartógrafo visita un territorio y produce mapas formales. Alguien que nunca estuvo allí puede entender todo mirando los mapas.
 
-> Usa el Arquitecto después del Detective. Sintetiza todo en diagramas C4, ERD completo y mapa de integraciones.
+> Usa el Architect después del Detective. Sintetiza todo en diagramas C4, ERD completo y mapa de integraciones.
 
 ---
 
-### 📝 Redactor: el notario
+### 📝 Writer: el notario
 
 El notario transforma lo descubierto en contratos formales, precisos y trazables. Cada cláusula tiene nivel de certeza declarado. El documento vale como contrato.
 
-> Usa el Redactor después del Arquitecto. Genera specs SDD, OpenAPI y user stories con trazabilidad de código.
+> Usa el Writer después del Architect. Genera specs SDD, OpenAPI y user stories con trazabilidad de código.
 
 ---
 
-### ⚖️ Revisor: el revisor de specs
+### ⚖️ Reviewer: el revisor de specs
 
-El Revisor toma los contratos del Redactor e intenta hacerles agujeros. No para destruir, sino para garantizar que lo que quede sea sólido.
+El Reviewer toma los contratos del Writer e intenta hacerles agujeros. No para destruir, sino para garantizar que lo que quede sea sólido.
 
-> Usa el Revisor después del Redactor.
-
----
-
-### 🧪 Tracer: el investigador de campo
-
-Cuando el análisis estático no responde, el investigador va al lugar. Observa logs en vivo, consulta la base de datos real (solo SELECT), pide que ejecutes flujos específicos. Solo observa, nunca modifica nada.
-
-> Usa el Tracer cuando haya brechas 🔴 que solo el sistema en ejecución puede resolver.
+> Usa el Reviewer después del Writer.
 
 ---
 
@@ -98,22 +90,14 @@ El estilista cataloga el guardarropa: paleta de colores, tipografía, espaciados
 
 ---
 
-### 📓 Chronicler: el escriba
-
-El escriba captura el conocimiento sobre un cambio justo después de que ocurre, antes de que el contexto se pierda.
-
-> Usa el Chronicler justo después de un cambio importante durante el desarrollo.
-
----
-
 ## Secuencia recomendada
 
 ```
 /reversa → orquesta todo automáticamente
 
 O manualmente:
-Scout → Arqueólogo (N sesiones) → Detective → Arquitecto → Redactor → Revisor
+Scout → Archaeologist (N sesiones) → Detective → Architect → Writer → Reviewer
 
 Opcionales en cualquier fase:
-Visor · Data Master · Design System · Tracer · Chronicler
+Visor · Data Master · Design System
 ```

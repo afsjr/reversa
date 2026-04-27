@@ -2,7 +2,12 @@
 
 **Command:** `/reversa`
 **Phase:** Orchestration
-**Analogy:** The orchestra conductor
+
+---
+
+## 🎼 The orchestra conductor
+
+A conductor doesn't play any instrument. They know the full score and tell who enters when, in what order, at what pace. Without them, each musician would play their part without connecting to the others. With them, everything becomes music.
 
 ---
 

@@ -27,12 +27,30 @@ Execute as tarefas do plano **sequencialmente, uma por vez**:
 3. Após conclusão: salve checkpoint em `.reversa/state.json` seguindo `references/checkpoint-guide.md` e marque a tarefa com ✅ em `.reversa/plan.md`.
 4. Apresente resumo breve do que foi gerado.
 
-**Ação especial após o Scout:** leia `.reversa/context/surface.json` e atualize a Fase 2 de `.reversa/plan.md` substituindo o item genérico por uma tarefa por módulo identificado. Exemplo:
+**Ação especial após o Scout:**
+
+1. Leia `.reversa/context/surface.json` e atualize a Fase 2 de `.reversa/plan.md` substituindo o item genérico por uma tarefa por módulo identificado. Exemplo:
 ```
-- [ ] **Arqueólogo** — Análise do módulo `auth`
-- [ ] **Arqueólogo** — Análise do módulo `orders`
-- [ ] **Arqueólogo** — Análise do módulo `payments`
+- [ ] **Archaeologist** — Análise do módulo `auth`
+- [ ] **Archaeologist** — Análise do módulo `orders`
+- [ ] **Archaeologist** — Análise do módulo `payments`
 ```
+
+2. Apresente ao usuário um resumo do que o Scout encontrou e pergunte o nível de documentação:
+
+> "[Nome], o Scout concluiu o mapeamento. Aqui está o que encontrei:
+> - **[N] módulos** identificados: [lista resumida]
+> - **Linguagem principal:** [linguagem]
+> - **[N] integrações externas** detectadas (ou: nenhuma)
+> - **Banco de dados:** [presente/ausente]
+>
+> Com base nisso, qual nível de documentação prefere para este projeto?
+>
+> 1. **Essencial** — artefatos principais (code-analysis, domain, architecture, specs SDD). Ideal para projetos simples.
+> 2. **Completo** — documentação completa com diagramas C4, ERD, ADRs, OpenAPI e matrizes de rastreabilidade. Padrão recomendado.
+> 3. **Detalhado** — máxima profundidade: flowcharts por função, ADRs expandidos, deployment, revisão cruzada obrigatória. Para sistemas enterprise."
+
+Salve a escolha em `.reversa/state.json` → campo `doc_level` (`essencial`, `completo` ou `detalhado`) antes de prosseguir para o Archaeologist.
 
 **Sobre paralelismo:** executar etapas do plano sequencialmente é orquestração normal — não requer autorização. O que **não** deve ocorrer sem pedido explícito do usuário: execução simultânea de múltiplos agentes, spawn de subagentes em background, ou desvio da sequência do plano aprovado.
 

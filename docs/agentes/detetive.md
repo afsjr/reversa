@@ -1,8 +1,13 @@
 # Detective
 
-**Command:** `/reversa-detetive`
+**Command:** `/reversa-detective`
 **Phase:** 3 - Interpretation
-**Analogy:** Sherlock Holmes
+
+---
+
+## 🔍 Sherlock Holmes
+
+Sherlock Holmes arrives after the archaeologist. Looks at the cataloged artifacts and asks: *"But why is this here? Who put it here? What does this reveal about who lived here?"* Doesn't excavate. Interprets.
 
 ---
 

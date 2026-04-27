@@ -2,7 +2,12 @@
 
 **Command:** `/reversa-design-system`
 **Phase:** Any
-**Analogy:** The stylist
+
+---
+
+## 🎨 The stylist
+
+The stylist catalogs the wardrobe: color palette, typography, spacing, design tokens. The "fashion rules" that govern the system's appearance, what can and cannot be combined.
 
 ---
 

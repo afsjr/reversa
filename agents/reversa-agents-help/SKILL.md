@@ -38,57 +38,48 @@ O corretor faz o primeiro tour no imóvel. Não abre gavetas, não lê documento
 
 ---
 
-## ⛏️ Arqueólogo — o escavador
-**Comando:** `/reversa-arqueologo`
+## ⛏️ Archaeologist — o escavador
+**Comando:** `/reversa-archaeologist`
 
-O arqueólogo escava o terreno com paciência, camada por camada. Cataloga cada artefato encontrado: tamanho, material, localização, forma. Ele não interpreta a civilização — só descreve com precisão o que está lá.
+O arqueólogo escava o terreno com paciência, camada por camada. Cataloga cada artefato encontrado: tamanho, material, localização, forma. Ele não interpreta a civilização, só descreve com precisão o que está lá.
 
-> Use o Arqueólogo para analisar o código módulo a módulo. Ele extrai funções, algoritmos, estruturas de dados e fluxos de controle. **Roda um módulo por sessão** para economizar tokens.
-
----
-
-## 🔍 Detetive — o Sherlock Holmes
-**Comando:** `/reversa-detetive`
-
-Sherlock Holmes chega depois do arqueólogo. Olha para os artefatos catalogados e pergunta: *"Mas por que isso está aqui? Quem colocou? O que isso revela sobre quem viveu aqui?"* Ele não escava — ele interpreta.
-
-> Use o Detetive após o Arqueólogo. Ele extrai regras de negócio implícitas, lê o histórico git como um diário e reconstrói decisões que ninguém documentou.
+> Use o Archaeologist para analisar o código módulo a módulo. Ele extrai funções, algoritmos, estruturas de dados e fluxos de controle. **Roda um módulo por sessão** para economizar tokens.
 
 ---
 
-## 📐 Arquiteto — o cartógrafo
-**Comando:** `/reversa-arquiteto`
+## 🔍 Detective — o Sherlock Holmes
+**Comando:** `/reversa-detective`
+
+Sherlock Holmes chega depois do arqueólogo. Olha para os artefatos catalogados e pergunta: *"Mas por que isso está aqui? Quem colocou? O que isso revela sobre quem viveu aqui?"* Ele não escava. Ele interpreta.
+
+> Use o Detective após o Archaeologist. Ele extrai regras de negócio implícitas, lê o histórico git como um diário e reconstrói decisões que ninguém documentou.
+
+---
+
+## 📐 Architect — o cartógrafo
+**Comando:** `/reversa-architect`
 
 O cartógrafo visita um território e produz mapas formais: planta baixa, mapa de elevação, planta estrutural. Alguém que nunca pisou lá consegue entender tudo olhando para os mapas.
 
-> Use o Arquiteto após o Detetive. Ele sintetiza tudo em diagramas C4, ERD completo e mapa de integrações.
+> Use o Architect após o Detective. Ele sintetiza tudo em diagramas C4, ERD completo e mapa de integrações.
 
 ---
 
-## 📝 Redator — o tabelião
-**Comando:** `/reversa-redator`
+## 📝 Writer — o tabelião
+**Comando:** `/reversa-writer`
 
-O tabelião transforma o que foi descoberto em contratos formais, precisos e rastreáveis. Cada cláusula tem grau de certeza declarado. O documento vale como contrato — um agente de IA pode reimplementar o sistema a partir dele.
+O tabelião transforma o que foi descoberto em contratos formais, precisos e rastreáveis. Cada cláusula tem grau de certeza declarado. O documento vale como contrato: um agente de IA pode reimplementar o sistema a partir dele.
 
-> Use o Redator após o Arquiteto. Ele gera as specs SDD, OpenAPI e user stories com rastreabilidade de código.
-
----
-
-## ⚖️ Revisor — o revisor de specs
-**Comando:** `/reversa-revisor`
-
-O Revisor pega os contratos do Redator e tenta furar: *"Isso é contradição. Esse ponto não tem prova. Essa regra some se o usuário fizer X."* Ele não quer destruir — quer garantir que o que ficou de pé seja sólido.
-
-> Use o Revisor após o Redator. Ele revisa criticamente as specs, reclassifica confiança e levanta perguntas para validação humana.
+> Use o Writer após o Architect. Ele gera as specs SDD, OpenAPI e user stories com rastreabilidade de código.
 
 ---
 
-## 🧪 Tracer — o investigador de campo
-**Comando:** `/reversa-tracer`
+## ⚖️ Reviewer — o revisor de specs
+**Comando:** `/reversa-reviewer`
 
-Quando a análise estática não responde, o investigador vai ao local. Observa logs ao vivo, consulta o banco real (só SELECT), pede para o usuário executar fluxos específicos. Ele só observa — nunca modifica nada.
+O Reviewer pega os contratos do Writer e tenta furar: *"Isso é contradição. Esse ponto não tem prova. Essa regra some se o usuário fizer X."* Ele não quer destruir, quer garantir que o que ficou de pé seja sólido.
 
-> Use o Tracer quando houver lacunas 🔴 que só o sistema em execução pode resolver.
+> Use o Reviewer após o Writer. Ele revisa criticamente as specs, reclassifica confiança e levanta perguntas para validação humana.
 
 ---
 
@@ -125,8 +116,8 @@ O estilista cataloga o guarda-roupa: paleta de cores, tipografia, espaçamentos,
 /reversa → orquestra tudo automaticamente
 
 Ou manualmente:
-Scout → Arqueólogo (N sessões) → Detetive → Arquiteto → Redator → Revisor
+Scout → Archaeologist (N sessões) → Detective → Architect → Writer → Reviewer
 
 Opcionais em qualquer fase:
-Visor · Data Master · Design System · Tracer
+Visor · Data Master · Design System
 ```

@@ -1,14 +1,19 @@
-# Arquitecto
+# Architect
 
-**Comando:** `/reversa-arquiteto`
+**Comando:** `/reversa-architect`
 **Fase:** 3 - Interpretación
-**Analogía:** El cartógrafo
+
+---
+
+## 📐 El cartógrafo
+
+El cartógrafo visita un territorio y produce mapas formales: plano, mapa de elevación, plano estructural. Alguien que nunca estuvo allí puede entender todo mirando los mapas.
 
 ---
 
 ## Qué hace
 
-El Arquitecto visita el territorio excavado e interpretado y produce mapas formales. La idea es que alguien que nunca pisó el proyecto pueda entender la estructura completa solo mirando lo que el Arquitecto produjo.
+El Architect visita el territorio excavado e interpretado y produce mapas formales. La idea es que alguien que nunca pisó el proyecto pueda entender la estructura completa solo mirando lo que el Arquitecto produjo.
 
 Trabaja junto al Detective en la Fase 3. Mientras el Detective extrae el *por qué*, el Arquitecto sintetiza el *cómo*.
 

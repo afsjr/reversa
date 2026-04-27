@@ -2,7 +2,12 @@
 
 **Comando:** `/reversa-design-system`
 **Fase:** Qualquer
-**Analogia:** O estilista
+
+---
+
+## 🎨 O estilista
+
+O estilista cataloga o guarda-roupa: paleta de cores, tipografia, espaçamentos, tokens de design. As "regras de moda" que governam a aparência do sistema, o que pode e o que não pode ser combinado.
 
 ---
 

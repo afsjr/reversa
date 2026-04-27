@@ -13,7 +13,7 @@ Reconnaissance  Excavation    Interpretation       Generation    Review
                                Architect
 ```
 
-**Independent agents** that run in any phase: **Visor**, **Data Master**, **Design System**, **Tracer**
+**Independent agents** that run in any phase: **Visor**, **Data Master**, **Design System**
 
 ---
 
@@ -30,6 +30,8 @@ What it produces:
 - Structured JSON data for the next agents (`.reversa/context/surface.json`)
 
 After the Scout finishes, Reversa uses the `surface.json` to personalize Phase 2: instead of a generic "analyze the code" task, the plan becomes one task per identified module.
+
+This is also when Reversa presents the Scout summary and asks for the **documentation level** (`doc_level`): essential, complete, or detailed. The choice defines which artifacts each agent will generate in the following phases — see [How to use](uso.md#documentation-level) for the full table.
 
 ---
 
@@ -119,5 +121,3 @@ These agents don't belong to a specific phase and can be triggered at any time:
 | **Visor** | When you have screenshots of the system available |
 | **Data Master** | When DDL, migrations, or ORM models are available |
 | **Design System** | When CSS files, themes, or interface screenshots are available |
-| **Tracer** | When there are 🔴 gaps that only the running system can resolve |
-| **Chronicler** | To document code changes made during development |

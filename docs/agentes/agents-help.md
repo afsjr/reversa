@@ -68,14 +68,6 @@ The Reviewer takes the Writer's contracts and tries to punch holes in them: *"Th
 
 ---
 
-### 🧪 Tracer: the field investigator
-
-When static analysis doesn't answer, the investigator goes to the location. Observes live logs, queries the real database (SELECT only), asks you to run specific flows. Only observes, never modifies anything.
-
-> Use the Tracer when there are 🔴 gaps only the running system can resolve.
-
----
-
 ### 🖼️ Visor: the forensic illustrator
 
 The forensic illustrator works only with images. Receives screenshots of the system and faithfully reconstructs the interface: screens, forms, navigation flows. Doesn't need the system to be running. Just the photos.
@@ -100,14 +92,6 @@ The stylist catalogs the wardrobe: color palette, typography, spacing, design to
 
 ---
 
-### 📓 Chronicler: the scribe
-
-The scribe captures knowledge about a change right after it happens, before the context is lost. Two quick questions and the change is documented forever.
-
-> Use the Chronicler right after an important change during development.
-
----
-
 ## Recommended sequence
 
 ```
@@ -117,5 +101,5 @@ Or manually:
 Scout → Archaeologist (N sessions) → Detective → Architect → Writer → Reviewer
 
 Optional at any phase:
-Visor · Data Master · Design System · Tracer · Chronicler
+Visor · Data Master · Design System
 ```

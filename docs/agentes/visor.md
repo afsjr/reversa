@@ -2,7 +2,12 @@
 
 **Command:** `/reversa-visor`
 **Phase:** Any
-**Analogy:** The forensic illustrator
+
+---
+
+## 🖼️ The forensic illustrator
+
+The forensic illustrator works only with images. Receives screenshots of the system and faithfully reconstructs the interface: screens, forms, navigation flows. Doesn't need the system to be running. Just the photos.
 
 ---
 

@@ -12,12 +12,13 @@ Este arquivo persiste o estado completo da análise entre sessões. O Reversa l�
   "chat_language": "pt-br",
   "doc_language": "Português",
   "answer_mode": "chat",
+  "doc_level": "completo",
   "output_folder": "_reversa_sdd",
   "phase": "reconhecimento",
   "completed": ["reconhecimento"],
   "pending": ["escavacao", "interpretacao", "geracao", "revisao"],
   "engines": ["claude-code"],
-  "agents": ["reversa", "reversa-scout", "reversa-arqueologo"],
+  "agents": ["reversa", "reversa-scout", "reversa-archaeologist"],
   "checkpoints": {
     "scout": {
       "completed_at": "2026-04-26T10:00:00Z",
@@ -27,7 +28,7 @@ Este arquivo persiste o estado completo da análise entre sessões. O Reversa l�
         ".reversa/context/surface.json"
       ]
     },
-    "arqueologo": {
+    "archaeologist": {
       "completed_at": "2026-04-26T11:00:00Z",
       "modules_analyzed": ["auth", "orders", "payments"],
       "files": [
@@ -56,6 +57,7 @@ Este arquivo persiste o estado completo da análise entre sessões. O Reversa l�
 | `chat_language` | string | Idioma das interações (ex: pt-br, en-us) |
 | `doc_language` | string | Idioma das specs geradas (ex: Português, English) |
 | `answer_mode` | string | Como o usuário responde às lacunas: `chat` ou `file` |
+| `doc_level` | string | Volume de documentação gerada: `essencial`, `completo` ou `detalhado` (padrão: `completo`) |
 | `output_folder` | string | Pasta de saída das specs (padrão: `_reversa_sdd`) |
 | `phase` | string \| null | Fase atual. `null` = não iniciado |
 | `completed` | string[] | Fases concluídas |

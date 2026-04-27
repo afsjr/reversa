@@ -43,11 +43,11 @@ O Reversa é o único agente que **escreve** no state.json. Os demais agentes ap
 }
 ```
 
-### Ao marcar uma tarefa parcial do Arqueólogo
+### Ao marcar uma tarefa parcial do Archaeologist
 ```json
 {
   "checkpoints": {
-    "arqueologo": {
+    "archaeologist": {
       "modules_analyzed": ["auth", "orders"],
       "modules_pending": ["payments", "users"]
     }
@@ -88,13 +88,13 @@ Ao mover de fase:
         ".reversa/context/surface.json"
       ]
     },
-    "arqueologo": {
+    "archaeologist": {
       "modules_analyzed": ["auth", "orders"],
       "modules_pending": ["payments", "users"]
     }
   },
   "engines": ["claude-code"],
-  "agents": ["reversa", "reversa-scout", "reversa-arqueologo"],
+  "agents": ["reversa", "reversa-scout", "reversa-archaeologist"],
   "created_files": []
 }
 ```

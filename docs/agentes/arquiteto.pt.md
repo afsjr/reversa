@@ -1,16 +1,21 @@
-# Arquiteto
+# Architect
 
-**Comando:** `/reversa-arquiteto`
+**Comando:** `/reversa-architect`
 **Fase:** 3 - Interpretação
-**Analogia:** O cartógrafo
+
+---
+
+## 📐 O cartógrafo
+
+O cartógrafo visita um território e produz mapas formais: planta baixa, mapa de elevação, planta estrutural. Alguém que nunca pisou lá consegue entender tudo olhando para os mapas.
 
 ---
 
 ## O que faz
 
-O Arquiteto visita o território que foi escavado e interpretado, e produz mapas formais. A ideia é que alguém que nunca pisou no projeto consiga entender a estrutura completa olhando apenas para o que o Arquiteto produziu.
+O Architect visita o território que foi escavado e interpretado, e produz mapas formais. A ideia é que alguém que nunca pisou no projeto consiga entender a estrutura completa olhando apenas para o que o Architect produziu.
 
-Ele trabalha junto com o Detetive na Fase 3. Enquanto o Detetive extrai o *porquê* (regras de negócio, decisões), o Arquiteto sintetiza o *como* (estrutura, componentes, integrações).
+Ele trabalha junto com o Detective na Fase 3. Enquanto o Detective extrai o *porquê* (regras de negócio, decisões), o Architect sintetiza o *como* (estrutura, componentes, integrações).
 
 ---
 
@@ -18,7 +23,7 @@ Ele trabalha junto com o Detetive na Fase 3. Enquanto o Detetive extrai o *porqu
 
 ### Diagramas C4
 
-O Arquiteto gera os três níveis do modelo C4:
+O Architect gera os três níveis do modelo C4:
 
 **Contexto (Nível 1):** o sistema no centro, os usuários ao redor, os sistemas externos com que se integra e os protocolos de comunicação.
 
