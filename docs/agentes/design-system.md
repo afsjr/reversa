@@ -1,63 +1,63 @@
 # Design System
 
-**Comando:** `/reversa-design-system`
-**Fase:** Qualquer
-**Analogia:** O estilista
+**Command:** `/reversa-design-system`
+**Phase:** Any
+**Analogy:** The stylist
 
 ---
 
-## O que faz
+## What it does
 
-O estilista cataloga o guarda-roupa do sistema: paleta de cores, tipografia, espaçamentos, tokens de design. As "regras de moda" que governam a aparência do projeto, o que pode e o que não pode ser combinado.
+The stylist catalogs the system's wardrobe: color palette, typography, spacing, design tokens. The "fashion rules" that govern the project's appearance, what can and can't be combined.
 
-Útil quando você precisa reescrever a interface ou criar novos componentes mantendo consistência visual com o que já existe.
-
----
-
-## Fontes de análise
-
-O Design System usa o que estiver disponível:
-
-1. **CSS/SCSS/LESS:** variáveis CSS (`--color-primary`) e variáveis Sass (`$color-primary`)
-2. **Tailwind CSS:** `tailwind.config.js` com tema customizado
-3. **Bibliotecas de UI:** MUI (`createTheme`), Chakra UI (`extendTheme`), Mantine, Ant Design
-4. **styled-components / Emotion:** objetos de tema via `ThemeProvider`
-5. **Arquivos de tokens:** Style Dictionary, `tokens.json`, `design-tokens.yaml`
-6. **Storybook:** se existir, analisa stories para variantes de componentes
-7. **Screenshots:** como complemento visual para confirmar tokens
+Useful when you need to rewrite the interface or create new components while maintaining visual consistency with what already exists.
 
 ---
 
-## O que ele documenta
+## Analysis sources
 
-### Paleta de cores
+Design System uses whatever is available:
 
-Cores primárias, secundárias e de destaque; cores neutras; cores de feedback (sucesso, erro, alerta, informação); variações (50 a 900 ou light/main/dark) com valores em hex/rgb/hsl.
-
-### Tipografia
-
-Famílias de fontes com fallbacks, escala de tamanhos, pesos disponíveis, line-height e letter-spacing padrão, hierarquia (h1 a h6, body, caption, label, code).
-
-### Espaçamento e layout
-
-Escala de espaçamento base, grid (colunas, gutter, largura máxima), breakpoints (sm, md, lg, xl, 2xl em px).
-
-### Outros tokens
-
-Border-radius, sombras e elevações, z-index, transições e easing functions, opacidades semânticas.
-
-### Componentes
-
-Se houver biblioteca de componentes própria: lista de componentes, variantes e props principais.
+1. **CSS/SCSS/LESS:** CSS variables (`--color-primary`) and Sass variables (`$color-primary`)
+2. **Tailwind CSS:** `tailwind.config.js` with custom theme
+3. **UI libraries:** MUI (`createTheme`), Chakra UI (`extendTheme`), Mantine, Ant Design
+4. **styled-components / Emotion:** theme objects via `ThemeProvider`
+5. **Token files:** Style Dictionary, `tokens.json`, `design-tokens.yaml`
+6. **Storybook:** if it exists, analyzes stories for component variants
+7. **Screenshots:** as visual complement to confirm tokens
 
 ---
 
-## O que ele produz
+## What it documents
 
-| Arquivo | Conteúdo |
-|---------|----------|
-| `_reversa_sdd/design-system/color-palette.md` | Paleta completa com valores |
-| `_reversa_sdd/design-system/typography.md` | Sistema tipográfico |
-| `_reversa_sdd/design-system/spacing.md` | Espaçamento, grid e breakpoints |
-| `_reversa_sdd/design-system/tokens.md` | Todos os tokens em tabela |
-| `_reversa_sdd/design-system/design-system.md` | Documento consolidado |
+### Color palette
+
+Primary, secondary, and accent colors; neutral colors; feedback colors (success, error, warning, info); variations (50 to 900 or light/main/dark) with values in hex/rgb/hsl.
+
+### Typography
+
+Font families with fallbacks, size scale, available weights, default line-height and letter-spacing, hierarchy (h1 to h6, body, caption, label, code).
+
+### Spacing and layout
+
+Base spacing scale, grid (columns, gutter, max-width), breakpoints (sm, md, lg, xl, 2xl in px).
+
+### Other tokens
+
+Border-radius, shadows and elevations, z-index scale, transitions and easing functions, semantic opacities.
+
+### Components
+
+If there's a custom component library: list of components, variants, and main props.
+
+---
+
+## What it produces
+
+| File | Content |
+|------|---------|
+| `_reversa_sdd/design-system/color-palette.md` | Complete palette with values |
+| `_reversa_sdd/design-system/typography.md` | Typography system |
+| `_reversa_sdd/design-system/spacing.md` | Spacing, grid, and breakpoints |
+| `_reversa_sdd/design-system/tokens.md` | All tokens in a table |
+| `_reversa_sdd/design-system/design-system.md` | Consolidated document |

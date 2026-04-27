@@ -1,53 +1,53 @@
-# Arqueólogo
+# Archaeologist
 
-**Comando:** `/reversa-arqueologo`
-**Fase:** 2 - Escavação
-**Analogia:** O escavador
-
----
-
-## O que faz
-
-O Arqueólogo escava o código com paciência, camada por camada. Cataloga cada artefato encontrado: tamanho, forma, localização, estrutura. Ele não interpreta a civilização, não tira conclusões sobre o negócio. Só descreve com precisão o que está lá.
-
-É um trabalho meticuloso e repetitivo, e isso é exatamente o que o torna valioso. O Detetive e o Arquiteto vão precisar do que ele catalogou para fazer o trabalho interpretativo.
+**Command:** `/reversa-arqueologo`
+**Phase:** 2 - Excavation
+**Analogy:** The excavator
 
 ---
 
-## O que ele analisa por módulo
+## What it does
 
-- **Fluxo de controle:** funções e métodos principais, condicionais complexas, loops com lógica de negócio, tratamento de erros e exceções
-- **Algoritmos e lógica:** algoritmos não-triviais, transformações de dados, cálculos e fórmulas, lógica de validação
-- **Estruturas de dados:** modelos, entidades, DTOs, interfaces; dicionário de dados com campos, tipos, obrigatoriedade e valores padrão
-- **Metadados e configurações:** constantes e enums com nomes de domínio, feature flags, parâmetros configuráveis por ambiente
+The Archaeologist digs through the code patiently, layer by layer. It catalogs every artifact found: size, shape, location, structure. It doesn't interpret the civilization, doesn't draw conclusions about the business. Just describes precisely what's there.
 
----
-
-## Um módulo por sessão
-
-O Arqueólogo analisa um módulo por vez, de propósito. Para projetos com muitos módulos, isso significa várias sessões. Mas é a abordagem certa:
-
-- Preserva qualidade: análise profunda de um módulo é melhor que análise rasa de vinte
-- Conserva contexto: não esgota a janela de contexto do agente
-- Permite revisão incremental: você pode revisar o resultado de cada módulo antes de continuar
+It's meticulous and repetitive work, and that's exactly what makes it valuable. The Detective and the Architect will need what it cataloged to do their interpretive work.
 
 ---
 
-## O que ele produz
+## What it analyzes per module
 
-| Arquivo | Conteúdo |
-|---------|----------|
-| `_reversa_sdd/code-analysis.md` | Análise técnica consolidada |
-| `_reversa_sdd/data-dictionary.md` | Dicionário completo de dados |
-| `_reversa_sdd/flowcharts/[modulo].md` | Fluxograma em Mermaid por módulo |
-| `.reversa/context/modules.json` | Dados estruturados por módulo para os próximos agentes |
+- **Control flow:** main functions and methods, complex conditionals, loops with business logic, error and exception handling
+- **Algorithms and logic:** non-trivial algorithms, data transformations, calculations and formulas, validation logic
+- **Data structures:** models, entities, DTOs, interfaces; data dictionary with fields, types, required/optional, default values
+- **Metadata and configuration:** constants and enums with domain names, feature flags, environment-configurable parameters
 
 ---
 
-## Escala de confiança
+## One module per session
 
-O Arqueólogo usa a [escala de confiança](../escala-confianca.md) em tudo que produz:
+The Archaeologist analyzes one module at a time, intentionally. For projects with many modules, this means several sessions. But it's the right approach:
 
-- 🟢 para o que ele leu diretamente no código
-- 🟡 para o que ele inferiu de padrões
-- 🔴 para o que estava ilegível, obfuscado ou dependente de dados externos
+- Preserves quality: deep analysis of one module beats shallow analysis of twenty
+- Conserves context: doesn't exhaust the agent's context window
+- Enables incremental review: you can review each module's result before continuing
+
+---
+
+## What it produces
+
+| File | Content |
+|------|---------|
+| `_reversa_sdd/code-analysis.md` | Consolidated technical analysis |
+| `_reversa_sdd/data-dictionary.md` | Complete data dictionary |
+| `_reversa_sdd/flowcharts/[module].md` | Mermaid flowchart per module |
+| `.reversa/context/modules.json` | Structured data per module for the next agents |
+
+---
+
+## Confidence scale
+
+The Archaeologist uses the [confidence scale](../escala-confianca.md) on everything it produces:
+
+- 🟢 for what it read directly in the code
+- 🟡 for what it inferred from patterns
+- 🔴 for what was unreadable, obfuscated, or dependent on external data

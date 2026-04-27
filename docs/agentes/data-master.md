@@ -1,71 +1,71 @@
 # Data Master
 
-**Comando:** `/reversa-data-master`
-**Fase:** Qualquer
-**Analogia:** O geólogo
+**Command:** `/reversa-data-master`
+**Phase:** Any
+**Analogy:** The geologist
 
 ---
 
-## O que faz
+## What it does
 
-O geólogo mapeia o subsolo: a camada que ninguém vê mas que sustenta tudo. Tabelas, relacionamentos, constraints, triggers, stored procedures. A fundação invisível sobre a qual a aplicação está construída.
+The geologist maps the underground: the layer nobody sees but that supports everything. Tables, relationships, constraints, triggers, stored procedures. The invisible foundation on which the application is built.
 
-O Scout faz uma varredura superficial do banco (só lista os arquivos). O Data Master é a análise completa, profunda e formal.
+Scout does a surface-level scan of the database (just lists the files). Data Master is the complete, deep, formal analysis.
 
 ---
 
-## Fontes de análise
+## Analysis sources
 
-O Data Master usa o que estiver disponível no projeto:
+Data Master uses whatever is available in the project:
 
-1. **Arquivos DDL:** `.sql` com `CREATE TABLE`, `ALTER TABLE`
+1. **DDL files:** `.sql` with `CREATE TABLE`, `ALTER TABLE`
 2. **Migrations:** Laravel, Rails, Flyway, Liquibase, Alembic, Prisma
-3. **Modelos ORM:** Eloquent, ActiveRecord, SQLAlchemy, Hibernate, TypeORM
-4. **Screenshots:** de ferramentas como DBeaver, pgAdmin, MySQL Workbench
-5. **Conexão direta:** apenas `SELECT`; nunca `INSERT`, `UPDATE`, `DELETE`, `DROP`
+3. **ORM models:** Eloquent, ActiveRecord, SQLAlchemy, Hibernate, TypeORM
+4. **Screenshots:** from tools like DBeaver, pgAdmin, MySQL Workbench
+5. **Direct connection:** read-only only; never `INSERT`, `UPDATE`, `DELETE`, `DROP`
 
 ---
 
-## O que ele documenta
+## What it documents
 
-### Inventário de tabelas
+### Table inventory
 
-Lista todas as tabelas com nome e propósito inferido, agrupadas por domínio de negócio.
+Lists all tables with name and inferred purpose, grouped by business domain.
 
-### Estrutura detalhada
+### Detailed structure
 
-Para cada tabela: colunas com nome, tipo, tamanho, nullable e default; PKs e FKs; índices; constraints.
+For each table: columns with name, type, size, nullable, and default; PKs and FKs; indexes; constraints.
 
-### Relacionamentos
+### Relationships
 
-Todos os relacionamentos com cardinalidades (1:1, 1:N, N:M), tabelas de junção e relacionamentos polimórficos.
+All relationships with cardinalities (1:1, 1:N, N:M), junction tables, and polymorphic relationships.
 
-### Regras de negócio no banco
+### Business rules in the database
 
-Triggers (condição, evento, ação), stored procedures e funções (parâmetros, lógica, retorno), views e materialized views, check constraints com lógica de negócio.
+Triggers (condition, event, action), stored procedures and functions (parameters, logic, return), views and materialized views, check constraints with business logic.
 
-### ERD completo
+### Full ERD
 
-Gerado em Mermaid (`erDiagram`). Para bancos grandes, gera ERDs parciais por domínio mais um ERD geral simplificado.
-
----
-
-## O que ele produz
-
-| Arquivo | Conteúdo |
-|---------|----------|
-| `_reversa_sdd/database/erd.md` | ERD completo em Mermaid |
-| `_reversa_sdd/database/data-dictionary.md` | Todas as tabelas e colunas |
-| `_reversa_sdd/database/relationships.md` | Relacionamentos detalhados |
-| `_reversa_sdd/database/business-rules.md` | Regras de negócio no banco |
-| `_reversa_sdd/database/procedures.md` | Stored procedures e funções (se existirem) |
+Generated in Mermaid (`erDiagram`). For large databases, generates partial ERDs per domain plus a simplified general ERD.
 
 ---
 
-## Escala de confiança
+## What it produces
 
-| Situação | Marcação |
-|----------|----------|
-| DDL ou migration direto | 🟢 CONFIRMADO |
-| Inferido de ORM ou screenshots | 🟡 INFERIDO |
-| Inacessível | 🔴 LACUNA |
+| File | Content |
+|------|---------|
+| `_reversa_sdd/database/erd.md` | Full ERD in Mermaid |
+| `_reversa_sdd/database/data-dictionary.md` | All tables and columns |
+| `_reversa_sdd/database/relationships.md` | Detailed relationships |
+| `_reversa_sdd/database/business-rules.md` | Business rules in the database |
+| `_reversa_sdd/database/procedures.md` | Stored procedures and functions (if any) |
+
+---
+
+## Confidence scale
+
+| Situation | Mark |
+|-----------|------|
+| Direct DDL or migration | 🟢 CONFIRMED |
+| Inferred from ORM or screenshots | 🟡 INFERRED |
+| Inaccessible | 🔴 GAP |

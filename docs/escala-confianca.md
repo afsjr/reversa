@@ -1,58 +1,58 @@
-# Escala de confiança
+# Confidence scale
 
-Uma das partes mais importantes do Reversa é a honestidade. O sistema não finge saber o que não sabe.
+One of the most important parts of Reversa is honesty. The system doesn't pretend to know what it doesn't know.
 
-Toda afirmação gerada nas especificações é marcada com um dos três níveis abaixo. Sem exceções.
-
----
-
-## Os três níveis
-
-| Marcação | Nome | Significado |
-|----------|------|-------------|
-| 🟢 | **CONFIRMADO** | Extraído diretamente do código, com arquivo e linha como evidência. Pode ser citado. |
-| 🟡 | **INFERIDO** | Deduzido a partir de padrões, nomenclatura ou contexto. Provavelmente está certo, mas pode estar errado. |
-| 🔴 | **LACUNA** | Não determinável pela análise do código. Requer validação humana. |
+Every statement generated in the specifications is marked with one of the three levels below. No exceptions.
 
 ---
 
-## Por que isso importa
+## The three levels
 
-Sem essa marcação, uma especificação gerada por IA é uma caixa preta de confiança. Você não sabe o que foi extraído do código e o que foi inventado.
-
-Com a escala de confiança, você sabe exatamente onde confiar e onde questionar. Um agente de IA usando essa spec sabe o mesmo: "esse item é 🟢, pode usar. Esse é 🔴, precisa de uma fonte humana."
-
----
-
-## Exemplos práticos
-
-**🟢 CONFIRMADO**
-
-> A função `calcular_desconto` aplica 15% para pedidos acima de R$ 500.
-> Fonte: `src/pricing/discount.js`, linha 47.
-
-Isso foi extraído literalmente do código. Se alguém contestar, tem onde apontar.
+| Mark | Name | Meaning |
+|------|------|---------|
+| 🟢 | **CONFIRMED** | Extracted directly from code, with file and line as evidence. Can be cited. |
+| 🟡 | **INFERRED** | Deduced from patterns, naming, or context. Probably right, but might be wrong. |
+| 🔴 | **GAP** | Not determinable from code analysis. Requires human validation. |
 
 ---
 
-**🟡 INFERIDO**
+## Why this matters
 
-> O sistema parece usar soft delete para registros de clientes (campo `deleted_at` presente na tabela).
+Without this marking, an AI-generated specification is a black box of trust. You don't know what was extracted from the code and what was made up.
 
-O campo existe, o padrão é conhecido, mas em nenhum lugar do código está escrito explicitamente "usamos soft delete". Pode ser que o campo esteja lá por outro motivo.
-
----
-
-**🔴 LACUNA**
-
-> Não foi possível determinar o comportamento do sistema quando o pagamento falha por timeout na gateway.
-
-O código chama a gateway, mas não há tratamento de erro para timeout. O comportamento real pode existir na camada de infraestrutura, em um banco de dados que não foi analisado, ou nunca ter sido implementado. Precisa de alguém que conhece o sistema para responder.
+With the confidence scale, you know exactly where to trust and where to question. An AI agent using this spec knows the same: "this item is 🟢, safe to use. This one is 🔴, needs a human source."
 
 ---
 
-## Como as lacunas são resolvidas
+## Practical examples
 
-O Revisor coleta todas as lacunas 🔴 e as apresenta como perguntas para você responder. Depois que você responde, ele atualiza as specs e reclassifica: 🔴 vira 🟢 se você confirmou com evidência, ou 🟡 se você deu uma resposta mas sem certeza absoluta.
+**🟢 CONFIRMED**
 
-Lacunas que não puderam ser respondidas ficam em `_reversa_sdd/gaps.md` para tratamento posterior.
+> The `calculate_discount` function applies 15% for orders above $500.
+> Source: `src/pricing/discount.js`, line 47.
+
+This was extracted literally from the code. If someone disputes it, there's somewhere to point.
+
+---
+
+**🟡 INFERRED**
+
+> The system appears to use soft delete for customer records (field `deleted_at` present in the table).
+
+The field exists, the pattern is well-known, but nowhere in the code is it explicitly written "we use soft delete." The field might be there for another reason.
+
+---
+
+**🔴 GAP**
+
+> Could not determine the system's behavior when payment fails due to gateway timeout.
+
+The code calls the gateway, but there's no timeout error handling. The actual behavior may exist at the infrastructure layer, in a database that wasn't analyzed, or may never have been implemented. Someone who knows the system needs to answer this.
+
+---
+
+## How gaps are resolved
+
+The Reviewer collects all 🔴 gaps and presents them as questions for you to answer. After you answer, it updates the specs and reclassifies: 🔴 becomes 🟢 if you confirmed with evidence, or 🟡 if you gave an answer but without absolute certainty.
+
+Gaps that couldn't be answered remain in `_reversa_sdd/gaps.md` for later handling.

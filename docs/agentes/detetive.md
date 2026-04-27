@@ -1,69 +1,69 @@
-# Detetive
+# Detective
 
-**Comando:** `/reversa-detetive`
-**Fase:** 3 - Interpretação
-**Analogia:** Sherlock Holmes
-
----
-
-## O que faz
-
-O Detetive chega depois do Arqueólogo. Olha para tudo que foi catalogado e pergunta: *"Mas por que isso está aqui? Quem colocou isso? O que isso revela sobre quem construiu esse sistema?"*
-
-Ele não escava mais código. Ele interpreta o que foi escavado. É o especialista em extrair o conhecimento tácito que nunca foi documentado: as regras de negócio que vivem em condicionais, as decisões arquiteturais que só existem no histórico git, as restrições que aparecem em validações sem comentário nenhum.
+**Command:** `/reversa-detetive`
+**Phase:** 3 - Interpretation
+**Analogy:** Sherlock Holmes
 
 ---
 
-## O que ele analisa
+## What it does
 
-### Arqueologia git
+The Detective arrives after the Archaeologist. Looks at everything that was cataloged and asks: *"But why is this here? Who put this here? What does this reveal about who built this system?"*
 
-O Detetive lê o histórico de commits como um diário do projeto:
-
-- Mensagens que revelam decisões de negócio ou técnicas
-- Commits de fix/hotfix: indicam comportamentos que "deveriam funcionar assim mas não funcionavam"
-- Grandes refatorações: indicam mudanças de requisitos que ninguém documentou
-- Reverts com motivo aparente
-- Tudo isso vira fonte para ADRs retroativos
-
-### Regras de negócio implícitas
-
-- Condicionais complexas com lógica de domínio
-- Validações e restrições nos modelos
-- Constantes e enums com nomes de negócio (aqueles que revelam muito sobre como o domínio pensa)
-- Comentários antigos: são evidências de intenções passadas
-- TODOs e FIXMEs: intenções não implementadas que podem revelar requisitos esquecidos
-
-### Máquinas de estado
-
-Para cada entidade com campo de status/estado, o Detetive mapeia:
-
-- Todos os valores possíveis
-- Transições permitidas e seus gatilhos
-- Diagrama de estados em Mermaid
-
-### Permissões e papéis
-
-- Papéis de usuário no sistema
-- Permissões por papel
-- Restrições de acesso a funcionalidades e dados
-- Tudo em formato de matriz de permissões
+It doesn't dig more code. It interprets what was excavated. It's the specialist in extracting tacit knowledge that was never documented: business rules living in conditionals, architectural decisions that only exist in git history, constraints that appear in validations with no comment at all.
 
 ---
 
-## O que ele produz
+## What it analyzes
 
-| Arquivo | Conteúdo |
-|---------|----------|
-| `_reversa_sdd/domain.md` | Glossário e regras de domínio |
-| `_reversa_sdd/state-machines.md` | Máquinas de estado em Mermaid |
-| `_reversa_sdd/permissions.md` | Matriz de permissões |
-| `_reversa_sdd/adrs/[numero]-[titulo].md` | Um ADR por decisão identificada |
+### Git archaeology
+
+The Detective reads the commit history like a project diary:
+
+- Messages that reveal business or technical decisions
+- Fix/hotfix commits: indicate behaviors that "should have worked but didn't"
+- Large refactors: indicate requirement changes that nobody documented
+- Reverts with apparent reason
+- All of this becomes source material for retroactive ADRs
+
+### Implicit business rules
+
+- Complex conditionals with domain logic
+- Validations and constraints in models
+- Constants and enums with business names (those that reveal a lot about how the domain thinks)
+- Old comments: they are evidence of past intentions
+- TODOs and FIXMEs: unimplemented intentions that may reveal forgotten requirements
+
+### State machines
+
+For each entity with a status/state field, the Detective maps:
+
+- All possible values
+- Allowed transitions and their triggers
+- State diagram in Mermaid
+
+### Permissions and roles
+
+- User roles in the system
+- Permissions per role
+- Access restrictions to features and data
+- All in permission matrix format
 
 ---
 
-## Uma nota sobre confiança
+## What it produces
 
-O Detetive é rigoroso com a [escala de confiança](../escala-confianca.md). A maior parte do que ele extrai é 🟡 INFERIDO, e ele sabe disso. A arte é inferir bem e marcar honestamente onde há incerteza.
+| File | Content |
+|------|---------|
+| `_reversa_sdd/domain.md` | Glossary and domain rules |
+| `_reversa_sdd/state-machines.md` | State machines in Mermaid |
+| `_reversa_sdd/permissions.md` | Permission matrix |
+| `_reversa_sdd/adrs/[number]-[title].md` | One ADR per identified decision |
 
-Regras de negócio inferidas do código são hipóteses até serem validadas por alguém que conhece o negócio de verdade.
+---
+
+## A note on confidence
+
+The Detective is rigorous with the [confidence scale](../escala-confianca.md). Most of what it extracts is 🟡 INFERRED, and it knows this. The art is inferring well and marking honestly where there's uncertainty.
+
+Business rules inferred from code are hypotheses until validated by someone who truly knows the business.

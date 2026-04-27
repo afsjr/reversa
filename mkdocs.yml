@@ -27,7 +27,6 @@ theme:
     - navigation.sections
     - navigation.expand
     - navigation.top
-    - navigation.instant
     - search.suggest
     - search.highlight
     - content.code.copy
@@ -64,7 +63,49 @@ extra_css:
 
 plugins:
   - search:
-      lang: pt
+      lang:
+        - pt
+        - en
+  - i18n:
+      docs_structure: suffix
+      languages:
+        - locale: en
+          default: true
+          name: English
+        - locale: pt
+          name: Português
+          build: true
+        - locale: es
+          name: Español
+          build: true
+          nav_translations:
+            Home: Inicio
+            Why Reversa: Por qué Reversa
+            Installation: Instalación
+            How to use: Cómo usar
+            Supported engines: Motores compatibles
+            Analysis pipeline: Pipeline de análisis
+            Confidence scale: Escala de confianza
+            Agents: Agentes
+            Overview: Visión general
+            Reversa (Orchestrator): Reversa (Orquestador)
+            Generated outputs: Salidas generadas
+            Contributing: Contribuir
+            Guide with analogies: Guía con analogías
+          nav_translations:
+            Início: Home
+            Por que o Reversa: Why Reversa
+            Instalação: Installation
+            Como usar: How to use
+            Engines suportadas: Supported engines
+            Pipeline de análise: Analysis pipeline
+            Escala de confiança: Confidence scale
+            Agentes: Agents
+            Visão geral: Overview
+            Reversa (Orquestrador): Reversa (Orchestrator)
+            Saídas geradas: Generated outputs
+            Contribuindo: Contributing
+            Guia com analogias: Guide with analogies
 
 nav:
   - Início: index.md

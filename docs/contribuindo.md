@@ -1,16 +1,16 @@
-# Contribuindo
+# Contributing
 
-Contribuições são bem-vindas. Se você encontrou um bug, tem uma ideia para um novo agente, ou quer melhorar alguma coisa, o processo é simples.
-
----
-
-## Antes de enviar um PR
-
-Abra uma issue primeiro para discutir o que você quer mudar. Isso evita trabalho perdido nos dois lados, especialmente para mudanças maiores.
+Contributions are welcome. If you found a bug, have an idea for a new agent, or want to improve something, the process is simple.
 
 ---
 
-## Setup local
+## Before submitting a PR
+
+Open an issue first to discuss what you want to change. This avoids wasted work on both sides, especially for larger changes.
+
+---
+
+## Local setup
 
 ```bash
 git clone https://github.com/sandeco/reversa.git
@@ -20,30 +20,30 @@ npm install
 
 ---
 
-## Estrutura do projeto
+## Project structure
 
 ```
 reversa/
-├── agents/             ← cada agente tem sua pasta com SKILL.md
-├── bin/                ← ponto de entrada do CLI (reversa.js)
+├── agents/             ← each agent has its folder with SKILL.md
+├── bin/                ← CLI entry point (reversa.js)
 ├── lib/
-│   ├── commands/       ← implementação dos comandos CLI
-│   └── installer/      ← lógica de instalação e detecção de engines
-├── templates/          ← templates de config e arquivos de entrada por engine
-└── docs/               ← documentação (você está aqui)
+│   ├── commands/       ← CLI command implementations
+│   └── installer/      ← installation and engine detection logic
+├── templates/          ← config templates and engine entry files
+└── docs/               ← documentation (you are here)
 ```
 
 ---
 
-## Adicionando um novo agente
+## Adding a new agent
 
-1. Crie a pasta `agents/reversa-[nome]/`
-2. Crie o `SKILL.md` seguindo o formato dos agentes existentes (frontmatter obrigatório: `name`, `description`, `license`, `compatibility`, `metadata`)
-3. Adicione a pasta `references/` se o agente precisar de schemas ou templates de referência
-4. Atualize `lib/installer/` para incluir o novo agente na lista de instalação
+1. Create the folder `agents/reversa-[name]/`
+2. Create `SKILL.md` following the format of existing agents (required frontmatter: `name`, `description`, `license`, `compatibility`, `metadata`)
+3. Add a `references/` folder if the agent needs schema or reference templates
+4. Update `lib/installer/` to include the new agent in the install list
 
 ---
 
-## Licença
+## License
 
-MIT. Veja [LICENSE](https://github.com/sandeco/reversa/blob/main/LICENSE) para os detalhes.
+MIT. See [LICENSE](https://github.com/sandeco/reversa/blob/main/LICENSE) for details.

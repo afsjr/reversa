@@ -1,8 +1,8 @@
-# Como usar
+# How to use
 
-## Ativar o Reversa
+## Activate Reversa
 
-Após instalar, abra o projeto no seu agente de IA e ative o Reversa:
+After installing, open the project in your AI agent and activate Reversa:
 
 === "Claude Code / Cursor / Gemini CLI"
 
@@ -10,79 +10,79 @@ Após instalar, abra o projeto no seu agente de IA e ative o Reversa:
     /reversa
     ```
 
-=== "Codex e engines sem slash commands"
+=== "Codex and engines without slash commands"
 
     ```
     reversa
     ```
 
-É só isso. O Reversa assume o controle e coordena toda a análise a partir daí.
+That's it. Reversa takes control and coordinates the entire analysis from there.
 
 ---
 
-## O que acontece quando você ativa
+## What happens when you activate
 
-O Reversa verifica se existe uma análise em andamento:
+Reversa checks whether an analysis is already in progress:
 
-**Primeira vez:** ele cria um plano de exploração personalizado para o seu projeto, apresenta ao usuário para aprovação e começa a análise pela fase 1.
+**First time:** it creates a personalized exploration plan for your project, presents it to you for approval, and starts the analysis at phase 1.
 
-**Sessão retomada:** ele lê o checkpoint salvo em `.reversa/state.json` e continua exatamente de onde parou. Não importa se você fechou o editor, reiniciou a máquina ou deixou dormindo por três dias.
+**Resumed session:** it reads the checkpoint saved in `.reversa/state.json` and continues exactly where it left off. It doesn't matter if you closed the editor, restarted your machine, or left it sleeping for three days.
 
 ---
 
-## Fluxo típico de uma análise completa
+## Typical flow of a complete analysis
 
 ```
-Você digita /reversa
+You type /reversa
         ↓
-Reversa cria o plano de exploração
+Reversa creates the exploration plan
         ↓
-Você revisa e aprova o plano
+You review and approve the plan
         ↓
-Scout mapeia a superfície do projeto
+Scout maps the project surface
         ↓
-Arqueólogo analisa módulo por módulo
+Archaeologist analyzes module by module
         ↓
-Detetive e Arquiteto interpretam o que foi encontrado
+Detective and Architect interpret what was found
         ↓
-Redator gera as especificações (uma por vez, com sua aprovação)
+Writer generates specifications (one at a time, with your approval)
         ↓
-Revisor revisa tudo e levanta perguntas para validação
+Reviewer reviews everything and raises validation questions
         ↓
-Especificações prontas em _reversa_sdd/
+Specifications ready in _reversa_sdd/
 ```
 
-O processo é incremental e conversacional. Você não precisa estar presente o tempo todo: o Reversa avisa quando precisa de você.
+The process is incremental and conversational. You don't need to be present all the time: Reversa notifies you when it needs you.
 
 ---
 
-## Quanto tempo leva?
+## How long does it take?
 
-Depende do tamanho do projeto, mas uma regra geral:
+Depends on project size, but a general rule:
 
-| Tamanho do projeto | Estimativa |
-|--------------------|------------|
-| Pequeno (< 10 módulos) | 2 a 4 sessões |
-| Médio (10 a 30 módulos) | 5 a 10 sessões |
-| Grande (30+ módulos) | 10+ sessões |
+| Project size | Estimate |
+|--------------|----------|
+| Small (< 10 modules) | 2 to 4 sessions |
+| Medium (10 to 30 modules) | 5 to 10 sessions |
+| Large (30+ modules) | 10+ sessions |
 
-O Arqueólogo analisa um módulo por sessão para economizar contexto. Para projetos grandes, você vai retomar várias vezes, mas cada retomada é automática e sem perda de progresso.
-
----
-
-## Dica: estouro de contexto
-
-Se a sessão ficar muito longa e o contexto começar a acabar, o Reversa salva o checkpoint automaticamente e avisa:
-
-> "Vou pausar aqui. Tudo está salvo. Digite `/reversa` em uma nova sessão para continuar."
-
-Sem drama. Sem perda. É só continuar depois.
+The Archaeologist analyzes one module per session on purpose, to conserve context. For large projects, you'll resume several times, but each resume is automatic and lossless.
 
 ---
 
-## Ativar um agente específico manualmente
+## Tip: context overflow
 
-Se quiser rodar um agente avulso, sem passar pelo orquestrador:
+If the session gets too long and context starts running out, Reversa saves the checkpoint automatically and warns you:
+
+> "I'll pause here. Everything is saved. Type `/reversa` in a new session to continue."
+
+No drama. No loss. Just continue later.
+
+---
+
+## Activating a specific agent manually
+
+If you want to run an agent standalone, without going through the orchestrator:
 
 ```
 /reversa-scout
@@ -90,4 +90,4 @@ Se quiser rodar um agente avulso, sem passar pelo orquestrador:
 /reversa-data-master
 ```
 
-Útil quando você já tem uma análise em andamento e quer executar um agente específico por algum motivo pontual.
+Useful when you already have an analysis in progress and want to run a specific agent for a particular reason.

@@ -1,44 +1,44 @@
-# Por que o Reversa existe
+# Why Reversa exists
 
-## O problema clássico
+## The classic problem
 
-Imagine um sistema que entrou em produção em 2015. Ninguém que o escreveu ainda está na empresa. A documentação original era um arquivo Word que ninguém sabe onde foi parar. O código funciona, gera receita todos os dias, mas tem partes que ninguém ousa tocar porque *"mexeu aqui, quebrou ali"*.
+Imagine a system that went live in 2015. Nobody who wrote it is still at the company. The original documentation was a Word file nobody knows where it went. The code works, generates revenue every day, but there are parts nobody dares to touch because "change this, break that."
 
-Esse sistema carrega anos de conhecimento acumulado: regras de negócio implícitas, decisões arquiteturais tomadas às 23h antes de um deadline, lógica crítica enterrada em funções com nomes como `processar_v2_final_revisado`. O conhecimento existe. Ele está no código. Mas está preso lá dentro, inacessível para qualquer agente de IA.
-
----
-
-## O problema com agentes de IA
-
-Agentes de IA são transformadores para criar e evoluir software. Mas eles dependem de especificações para operar com segurança.
-
-Para sistemas novos, funciona bem: você escreve a spec, o agente executa. Mas para sistemas legados? O agente não tem como saber o que não pode quebrar. Se você pedir para ele "refatorar o módulo de pagamentos", ele vai refatorar com base no que o código *parece* fazer, sem saber o que o código *deve* fazer.
-
-O resultado é aquele momento clássico: o agente quebra uma regra de negócio que ninguém tinha documentado, e só descobrimos quando o cliente liga reclamando.
+That system carries years of accumulated knowledge: implicit business rules, architectural decisions made at 11pm before a deadline, critical logic buried in functions with names like `process_v2_final_revised`. The knowledge exists. It's in the code. But it's trapped there, inaccessible to any AI agent.
 
 ---
 
-## A solução
+## The problem with AI agents
 
-O Reversa é a ponte entre o sistema legado e os agentes de IA.
+AI agents are transformative for creating and evolving software. But they depend on specifications to operate safely.
 
-Ele analisa o código existente e extrai o conhecimento acumulado: regras de negócio, fluxos, contratos entre módulos, decisões arquiteturais retroativas. Depois, transforma tudo em especificações executáveis, rastreáveis e prontas para uso por qualquer agente codificador.
+For new systems it works well: you write the spec, the agent executes. But for legacy systems? The agent has no way of knowing what it can't break. If you ask it to "refactor the payments module," it will refactor based on what the code *seems* to do, without knowing what the code *should* do.
 
-O resultado não é documentação para humanos lerem numa tarde tranquila. São **contratos operacionais** que permitem a um agente evoluir o sistema com fidelidade ao que já existe.
-
----
-
-## Para quem é
-
-- **Empresas com sistemas legados** que querem modernizar sem reescrever tudo do zero
-- **Equipes que usam vibe coding** e nunca escreveram specs formais (sem julgamento)
-- **Desenvolvedores que herdaram um projeto** e precisam entender o que ele faz antes de mudar qualquer coisa
-- **Qualquer pessoa** que tem um sistema funcionando mas sem documentação e quer usar agentes de IA para evoluí-lo com segurança
+The result is that classic moment: the agent breaks a business rule that nobody had documented, and you only find out when the client calls to complain.
 
 ---
 
-## O que o Reversa não é
+## The solution
 
-O Reversa não é uma ferramenta de análise estática tradicional. Ele não gera cobertura de código, não faz linting, não aponta bugs. Ele é um framework de **extração de conhecimento**: pega o que está implícito no código e torna explícito em especificações formais.
+Reversa is the bridge between the legacy system and AI agents.
 
-Também não é uma solução mágica. Partes do sistema que são genuinamente inacessíveis pela análise estática (comportamento dependente de dados reais, regras que só existem na cabeça de alguém) vão aparecer como lacunas, marcadas com 🔴, esperando validação humana. Honestidade é parte do design.
+It analyzes the existing code and extracts the accumulated knowledge: business rules, flows, contracts between modules, retroactive architectural decisions. Then it transforms everything into executable, traceable specifications ready for any coding agent.
+
+The result is not documentation for humans to read on a quiet afternoon. These are **operational contracts** that allow an agent to evolve the system with fidelity to what already exists.
+
+---
+
+## Who it's for
+
+- **Companies with legacy systems** that want to modernize without rewriting everything from scratch
+- **Teams that use vibe coding** and never wrote formal specs (no judgment)
+- **Developers who inherited a project** and need to understand what it does before changing anything
+- **Anyone** with a working but undocumented system who wants to use AI agents to evolve it safely
+
+---
+
+## What Reversa is not
+
+Reversa is not a traditional static analysis tool. It doesn't generate code coverage, doesn't do linting, doesn't flag bugs. It's a **knowledge extraction** framework: it takes what is implicit in the code and makes it explicit in formal specifications.
+
+It's also not a magic solution. Parts of the system that are genuinely inaccessible through static analysis (behavior dependent on real data, rules that only exist in someone's head) will appear as gaps, marked with 🔴, waiting for human validation. Honesty is part of the design.

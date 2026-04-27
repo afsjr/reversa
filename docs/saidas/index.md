@@ -1,96 +1,96 @@
-# Saídas geradas
+# Generated outputs
 
-Tudo que o Reversa produz vai para a pasta `_reversa_sdd/` (ou o nome que você configurar em `config.toml`). O projeto legado nunca é tocado.
+Everything Reversa produces goes to the `_reversa_sdd/` folder (or whatever name you configure in `config.toml`). The legacy project is never touched.
 
 ---
 
-## Estrutura completa
+## Full structure
 
 ```
 _reversa_sdd/
-├── inventory.md              # Inventário do projeto (Scout)
-├── dependencies.md           # Dependências com versões (Scout)
-├── code-analysis.md          # Análise técnica por módulo (Arqueólogo)
-├── data-dictionary.md        # Dicionário completo de dados (Arqueólogo)
-├── domain.md                 # Glossário e regras de negócio (Detetive)
-├── state-machines.md         # Máquinas de estado em Mermaid (Detetive)
-├── permissions.md            # Matriz de permissões (Detetive)
-├── architecture.md           # Visão arquitetural geral (Arquiteto)
-├── c4-context.md             # Diagrama C4: Contexto (Arquiteto)
-├── c4-containers.md          # Diagrama C4: Containers (Arquiteto)
-├── c4-components.md          # Diagrama C4: Componentes (Arquiteto)
-├── erd-complete.md           # ERD completo em Mermaid (Arquiteto)
-├── confidence-report.md      # Relatório de confiança 🟢🟡🔴 (Revisor)
-├── gaps.md                   # Lacunas sem resposta (Revisor)
-├── questions.md              # Perguntas para validação humana (Revisor)
-├── dynamic.md                # Descobertas da análise dinâmica (Tracer)
+├── inventory.md              # Project inventory (Scout)
+├── dependencies.md           # Dependencies with versions (Scout)
+├── code-analysis.md          # Technical analysis per module (Archaeologist)
+├── data-dictionary.md        # Complete data dictionary (Archaeologist)
+├── domain.md                 # Glossary and business rules (Detective)
+├── state-machines.md         # State machines in Mermaid (Detective)
+├── permissions.md            # Permission matrix (Detective)
+├── architecture.md           # General architectural overview (Architect)
+├── c4-context.md             # C4 Diagram: Context (Architect)
+├── c4-containers.md          # C4 Diagram: Containers (Architect)
+├── c4-components.md          # C4 Diagram: Components (Architect)
+├── erd-complete.md           # Full ERD in Mermaid (Architect)
+├── confidence-report.md      # Confidence report 🟢🟡🔴 (Reviewer)
+├── gaps.md                   # Unresolved gaps (Reviewer)
+├── questions.md              # Human validation questions (Reviewer)
+├── dynamic.md                # Dynamic analysis findings (Tracer)
 │
-├── sdd/                      # Specs por componente (Redator)
-│   └── [componente].md
+├── sdd/                      # Specs per component (Writer)
+│   └── [component].md
 │
-├── openapi/                  # Specs de API (Redator)
+├── openapi/                  # API specs (Writer)
 │   └── [api].yaml
 │
-├── user-stories/             # User stories (Redator)
-│   └── [fluxo].md
+├── user-stories/             # User stories (Writer)
+│   └── [flow].md
 │
-├── adrs/                     # Decisões arquiteturais retroativas (Detetive)
-│   └── [numero]-[titulo].md
+├── adrs/                     # Retroactive architectural decisions (Detective)
+│   └── [number]-[title].md
 │
-├── flowcharts/               # Fluxogramas em Mermaid (Arqueólogo)
-│   └── [modulo].md
+├── flowcharts/               # Mermaid flowcharts (Archaeologist)
+│   └── [module].md
 │
-├── sequences/                # Diagramas de sequência (Tracer)
-│   └── [fluxo].md
+├── sequences/                # Sequence diagrams (Tracer)
+│   └── [flow].md
 │
-├── ui/                       # Specs de interface (Visor)
+├── ui/                       # Interface specs (Visor)
 │   ├── inventory.md
 │   ├── flow.md
 │   └── screens/
-│       └── [tela].md
+│       └── [screen].md
 │
-├── database/                 # Specs de banco de dados (Data Master)
+├── database/                 # Database specs (Data Master)
 │   ├── erd.md
 │   ├── data-dictionary.md
 │   ├── relationships.md
 │   ├── business-rules.md
 │   └── procedures.md
 │
-├── design-system/            # Tokens de design (Design System)
+├── design-system/            # Design tokens (Design System)
 │   ├── color-palette.md
 │   ├── typography.md
 │   ├── spacing.md
 │   ├── tokens.md
 │   └── design-system.md
 │
-├── changelog/                # Alterações documentadas (Chronicler)
+├── changelog/                # Documented changes (Chronicler)
 │   └── YYYY-MM-DD.md
 │
 └── traceability/
-    ├── spec-impact-matrix.md # Qual spec impacta qual (Arquiteto)
-    └── code-spec-matrix.md   # Arquivo de código → spec correspondente (Redator)
+    ├── spec-impact-matrix.md # Which spec impacts which (Architect)
+    └── code-spec-matrix.md   # Code file to corresponding spec (Writer)
 ```
 
 ---
 
-## Rastreabilidade
+## Traceability
 
-Dois arquivos conectam tudo:
+Two files connect everything:
 
-**`traceability/code-spec-matrix.md`:** mapeia cada arquivo de código para a spec correspondente, com o nível de cobertura. Você sabe o que está coberto e o que não está.
+**`traceability/code-spec-matrix.md`:** maps each code file to its corresponding spec, with coverage level. You know what's covered and what isn't.
 
-**`traceability/spec-impact-matrix.md`:** mapeia qual componente impacta qual. Antes de mexer em alguma coisa, você sabe o raio de blast da mudança.
+**`traceability/spec-impact-matrix.md`:** maps which component impacts which. Before changing something, you know the blast radius of the change.
 
 ---
 
-## Não commitando o que não precisa
+## What not to commit
 
-Sugestão de `.gitignore` para não versionar as saídas do Reversa junto com o código (a não ser que você queira):
+Suggested `.gitignore` to avoid versioning Reversa outputs alongside code (unless you want to):
 
 ```gitignore
-# Saídas do Reversa (opcional: remova se quiser versionar as specs)
+# Reversa outputs (optional: remove if you want to version the specs)
 _reversa_sdd/
 
-# Configuração pessoal do Reversa (nunca commitar)
+# Personal Reversa configuration (never commit)
 .reversa/config.user.toml
 ```

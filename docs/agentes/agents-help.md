@@ -1,121 +1,121 @@
-# Guia com analogias
+# Guide with analogies
 
-Não sabe qual agente chamar? Ativa o guia:
+Not sure which agent to call? Activate the guide:
 
 ```
 /agents_help
 ```
 
-Ele explica cada agente com uma analogia do mundo real. Mas já que você está aqui, aqui vai o resumo completo:
+It explains each agent with a real-world analogy. But since you're already here, here's the full rundown:
 
 ---
 
-## O time completo com analogias
+## The full team with analogies
 
-### 🎼 Reversa: o regente de orquestra
+### 🎼 Reversa: the orchestra conductor
 
-Um regente não toca nenhum instrumento. Ele conhece a partitura inteira e diz quem entra quando, em que ordem, em que ritmo. Sem ele, cada músico tocaria sua parte sem se conectar com os outros.
+A conductor doesn't play any instrument. They know the full score and tell who enters when, in what order, at what pace. Without them, each musician would play their part without connecting to the others.
 
-> Use `/reversa` para iniciar ou retomar a análise completa. Ele cuida da sequência por você.
-
----
-
-### 🗺️ Scout: o corretor de imóveis
-
-O corretor faz o primeiro tour no imóvel. Não abre gavetas, não lê documentos, não mexe em nada. Só mapeia: quantos cômodos, qual o bairro, que instalações existem, qual o estado geral.
-
-> Use o Scout no começo. Ele gera o inventário do projeto sem entrar na lógica do código.
+> Use `/reversa` to start or resume the full analysis. It handles the sequence for you.
 
 ---
 
-### ⛏️ Arqueólogo: o escavador
+### 🗺️ Scout: the real estate agent
 
-O arqueólogo escava o terreno com paciência, camada por camada. Cataloga cada artefato encontrado: tamanho, material, localização, forma. Ele não interpreta a civilização, só descreve com precisão o que está lá.
+The agent does the first tour of the property. Doesn't open drawers, doesn't read documents, doesn't touch anything. Just maps: how many rooms, which neighborhood, what facilities exist, what's the general condition.
 
-> Use o Arqueólogo para analisar o código módulo a módulo. Roda um módulo por sessão para economizar tokens.
-
----
-
-### 🔍 Detetive: Sherlock Holmes
-
-Sherlock Holmes chega depois do arqueólogo. Olha para os artefatos catalogados e pergunta: *"Mas por que isso está aqui? Quem colocou? O que isso revela sobre quem viveu aqui?"* Ele não escava. Ele interpreta.
-
-> Use o Detetive após o Arqueólogo. Ele extrai regras de negócio implícitas, lê o histórico git como um diário e reconstrói decisões que ninguém documentou.
+> Use Scout at the beginning. It generates the project inventory without diving into the code logic.
 
 ---
 
-### 📐 Arquiteto: o cartógrafo
+### ⛏️ Archaeologist: the excavator
 
-O cartógrafo visita um território e produz mapas formais: planta baixa, mapa de elevação, planta estrutural. Alguém que nunca pisou lá consegue entender tudo olhando para os mapas.
+The archaeologist digs through the terrain patiently, layer by layer. Catalogs every artifact found: size, material, location, shape. Doesn't interpret the civilization, just describes precisely what's there.
 
-> Use o Arquiteto após o Detetive. Ele sintetiza tudo em diagramas C4, ERD completo e mapa de integrações.
-
----
-
-### 📝 Redator: o tabelião
-
-O tabelião transforma o que foi descoberto em contratos formais, precisos e rastreáveis. Cada cláusula tem grau de certeza declarado. O documento vale como contrato: um agente de IA pode reimplementar o sistema a partir dele.
-
-> Use o Redator após o Arquiteto. Ele gera specs SDD, OpenAPI e user stories com rastreabilidade de código.
+> Use the Archaeologist to analyze code module by module. Runs one module per session to conserve tokens.
 
 ---
 
-### ⚖️ Revisor: o revisor de specs
+### 🔍 Detective: Sherlock Holmes
 
-O Revisor pega os contratos do Redator e tenta furar: *"Isso é contradição. Esse ponto não tem prova. Essa regra some se o usuário fizer X."* Ele não quer destruir, quer garantir que o que ficou de pé seja sólido.
+Sherlock Holmes arrives after the archaeologist. Looks at the cataloged artifacts and asks: *"But why is this here? Who put it here? What does this reveal about who lived here?"* Doesn't excavate, interprets.
 
-> Use o Revisor após o Redator. Ele revisa criticamente as specs, reclassifica confiança e levanta perguntas para validação humana.
-
----
-
-### 🧪 Tracer: o investigador de campo
-
-Quando a análise estática não responde, o investigador vai ao local. Observa logs ao vivo, consulta o banco real (só SELECT), pede para você executar fluxos específicos. Ele só observa, nunca modifica nada.
-
-> Use o Tracer quando houver lacunas 🔴 que só o sistema em execução pode resolver.
+> Use the Detective after the Archaeologist. It extracts implicit business rules, reads git history like a diary, and reconstructs decisions nobody documented.
 
 ---
 
-### 🖼️ Visor: o ilustrador forense
+### 📐 Architect: the cartographer
 
-O ilustrador forense trabalha só com imagens. Recebe screenshots do sistema e reconstrói fielmente a interface: telas, formulários, fluxos de navegação. Não precisa que o sistema esteja rodando. Só das fotos.
+The cartographer visits a territory and produces formal maps: floor plan, elevation map, structural plan. Someone who never set foot there can understand everything just by looking at the maps.
 
-> Use o Visor quando tiver screenshots disponíveis. Ele documenta a UI sem precisar de acesso ao sistema.
-
----
-
-### 🗄️ Data Master: o geólogo
-
-O geólogo mapeia o subsolo: a camada que ninguém vê mas que sustenta tudo. Tabelas, relacionamentos, constraints, triggers, procedures. A fundação invisível sobre a qual a aplicação está construída.
-
-> Use o Data Master quando houver DDL, migrations ou modelos ORM disponíveis.
+> Use the Architect after the Detective. It synthesizes everything into C4 diagrams, full ERD, and integration map.
 
 ---
 
-### 🎨 Design System: o estilista
+### 📝 Writer: the notary
 
-O estilista cataloga o guarda-roupa: paleta de cores, tipografia, espaçamentos, tokens de design. As "regras de moda" que governam a aparência do sistema.
+The notary transforms what was discovered into formal, precise, traceable contracts. Each clause has a declared confidence level. The document is a contract: an AI agent can reimplement the system from it.
 
-> Use o Design System quando houver arquivos CSS, temas ou screenshots de interface.
-
----
-
-### 📓 Chronicler: o escriba
-
-O escriba captura o conhecimento sobre uma mudança logo depois que ela acontece, antes que o contexto se perca. Duas perguntas rápidas e a alteração está documentada para sempre.
-
-> Use o Chronicler logo após uma alteração importante durante o desenvolvimento.
+> Use the Writer after the Architect. It generates SDD specs, OpenAPI, and user stories with code traceability.
 
 ---
 
-## Sequência recomendada
+### ⚖️ Reviewer: the spec reviewer
+
+The Reviewer takes the Writer's contracts and tries to punch holes in them: *"This is a contradiction. This point has no proof. This rule disappears if the user does X."* Not to destroy, but to ensure what's left standing is solid.
+
+> Use the Reviewer after the Writer. It critically reviews specs, reclassifies confidence, and raises questions for human validation.
+
+---
+
+### 🧪 Tracer: the field investigator
+
+When static analysis doesn't answer, the investigator goes to the location. Observes live logs, queries the real database (SELECT only), asks you to run specific flows. Only observes, never modifies anything.
+
+> Use the Tracer when there are 🔴 gaps only the running system can resolve.
+
+---
+
+### 🖼️ Visor: the forensic illustrator
+
+The forensic illustrator works only with images. Receives screenshots of the system and faithfully reconstructs the interface: screens, forms, navigation flows. Doesn't need the system to be running. Just the photos.
+
+> Use Visor when you have screenshots available. It documents the UI without needing access to the system.
+
+---
+
+### 🗄️ Data Master: the geologist
+
+The geologist maps the underground: the layer nobody sees but that supports everything. Tables, relationships, constraints, triggers, procedures. The invisible foundation on which the application is built.
+
+> Use Data Master when DDL, migrations, or ORM models are available.
+
+---
+
+### 🎨 Design System: the stylist
+
+The stylist catalogs the wardrobe: color palette, typography, spacing, design tokens. The "fashion rules" that govern the system's appearance.
+
+> Use Design System when CSS files, themes, or interface screenshots are available.
+
+---
+
+### 📓 Chronicler: the scribe
+
+The scribe captures knowledge about a change right after it happens, before the context is lost. Two quick questions and the change is documented forever.
+
+> Use the Chronicler right after an important change during development.
+
+---
+
+## Recommended sequence
 
 ```
-/reversa → orquestra tudo automaticamente
+/reversa → orchestrates everything automatically
 
-Ou manualmente:
-Scout → Arqueólogo (N sessões) → Detetive → Arquiteto → Redator → Revisor
+Or manually:
+Scout → Archaeologist (N sessions) → Detective → Architect → Writer → Reviewer
 
-Opcionais em qualquer fase:
+Optional at any phase:
 Visor · Data Master · Design System · Tracer · Chronicler
 ```

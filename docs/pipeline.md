@@ -1,123 +1,123 @@
-# Pipeline de análise
+# Analysis pipeline
 
-O Reversa transforma um sistema legado em especificações executáveis em 5 fases. Cada fase tem agentes específicos, e o orquestrador central coordena tudo para que aconteça na ordem certa.
+Reversa transforms a legacy system into executable specifications in 5 phases. Each phase has specific agents, and the central orchestrator coordinates everything to happen in the right order.
 
 ---
 
-## Visão geral
+## Overview
 
 ```
-Fase 1          Fase 2        Fase 3              Fase 4        Fase 5
-Reconhecimento  Escavação     Interpretação       Geração       Revisão
-   Scout        Arqueólogo    Detetive            Redator       Revisor
-                               Arquiteto
+Phase 1         Phase 2       Phase 3              Phase 4       Phase 5
+Reconnaissance  Excavation    Interpretation       Generation    Review
+   Scout        Archaeologist  Detective            Writer        Reviewer
+                               Architect
 ```
 
-**Agentes independentes** que rodam em qualquer fase: **Visor**, **Data Master**, **Design System**, **Tracer**
+**Independent agents** that run in any phase: **Visor**, **Data Master**, **Design System**, **Tracer**
 
 ---
 
-## Fase 1: Reconhecimento
+## Phase 1: Reconnaissance
 
-**Agente:** Scout
+**Agent:** Scout
 
-O Scout faz o primeiro tour no projeto. Como um corretor de imóveis que visita um imóvel pela primeira vez: não abre gavetas, não lê todos os documentos, só mapeia o território.
+The Scout does the first tour of the project. Like a real estate agent visiting a property for the first time: doesn't open drawers, doesn't read all the documents, just maps the territory.
 
-O que ele produz:
+What it produces:
 
-- Inventário completo do projeto (`inventory.md`)
-- Lista de dependências com versões (`dependencies.md`)
-- Estrutura de dados em JSON para os próximos agentes (`.reversa/context/surface.json`)
+- Complete project inventory (`inventory.md`)
+- Dependency list with versions (`dependencies.md`)
+- Structured JSON data for the next agents (`.reversa/context/surface.json`)
 
-Depois que o Scout termina, o Reversa usa o `surface.json` para personalizar a Fase 2: em vez de uma tarefa genérica "analisar o código", o plano vira uma tarefa por módulo identificado.
-
----
-
-## Fase 2: Escavação
-
-**Agente:** Arqueólogo
-
-O Arqueólogo escava o terreno módulo a módulo. Com paciência e precisão, cataloga cada artefato: funções, algoritmos, estruturas de dados, fluxos de controle. Ele não interpreta nem julga. Só descreve com precisão o que está lá.
-
-**Importante:** o Arqueólogo roda um módulo por sessão, de propósito. Projetos grandes têm muitos módulos, e tentar analisar tudo de uma vez consome contexto e reduz a qualidade da análise.
-
-O que ele produz:
-
-- Análise técnica consolidada (`code-analysis.md`)
-- Dicionário de dados (`data-dictionary.md`)
-- Fluxogramas em Mermaid por módulo (`flowcharts/[modulo].md`)
-- Dados estruturados por módulo (`.reversa/context/modules.json`)
+After the Scout finishes, Reversa uses the `surface.json` to personalize Phase 2: instead of a generic "analyze the code" task, the plan becomes one task per identified module.
 
 ---
 
-## Fase 3: Interpretação
+## Phase 2: Excavation
 
-**Agentes:** Detetive + Arquiteto
+**Agent:** Archaeologist
 
-Aqui a análise deixa de ser descritiva e vira interpretativa. Dois agentes trabalham em paralelo nessa fase.
+The Archaeologist digs through the code module by module. With patience and precision, it catalogs every artifact: functions, algorithms, data structures, control flows. No interpretation or judgment. Just a precise description of what's there.
 
-**O Detetive** é o Sherlock Holmes do time. Olha para o que o Arqueólogo catalogou e pergunta: *"Mas por que isso está aqui? Quem tomou essa decisão? O que o histórico git revela?"*. Extrai regras de negócio implícitas, ADRs retroativos, máquinas de estado e matrizes de permissão.
+**Important:** the Archaeologist runs one module per session, intentionally. Large projects have many modules, and trying to analyze everything at once burns context and reduces analysis quality.
 
-**O Arquiteto** é o cartógrafo. Sintetiza tudo em documentação arquitetural formal: diagramas C4 nos três níveis (Contexto, Containers, Componentes), ERD completo, mapa de integrações, dívidas técnicas.
+What it produces:
 
-O que eles produzem:
-
-- Domínio e regras de negócio (`domain.md`)
-- Máquinas de estado em Mermaid (`state-machines.md`)
-- Matriz de permissões (`permissions.md`)
-- ADRs retroativos (`adrs/`)
-- Diagramas C4 (`c4-context.md`, `c4-containers.md`, `c4-components.md`)
-- ERD completo (`erd-complete.md`)
-- Visão arquitetural geral (`architecture.md`)
+- Consolidated technical analysis (`code-analysis.md`)
+- Data dictionary (`data-dictionary.md`)
+- Mermaid flowcharts per module (`flowcharts/[module].md`)
+- Structured data per module (`.reversa/context/modules.json`)
 
 ---
 
-## Fase 4: Geração
+## Phase 3: Interpretation
 
-**Agente:** Redator
+**Agents:** Detective + Architect
 
-O Redator é o tabelião do time. Transforma tudo que foi descoberto nas fases anteriores em contratos formais: especificações SDD por componente, specs OpenAPI para as APIs, user stories para os fluxos de usuário.
+Here the analysis stops being descriptive and becomes interpretive. Two agents work in this phase.
 
-Cada afirmação nas specs é marcada com a [escala de confiança](escala-confianca.md): 🟢 CONFIRMADO, 🟡 INFERIDO ou 🔴 LACUNA.
+**The Detective** is the team's Sherlock Holmes. Looks at what the Archaeologist cataloged and asks: *"But why is this here? Who made this decision? What does the git history reveal?"* Extracts implicit business rules, retroactive ADRs, state machines, and permission matrices.
 
-O Redator não gera tudo de uma vez. Ele monta um plano, apresenta para você aprovar, e depois gera um arquivo por vez, esperando confirmação antes de continuar. Isso permite revisão incremental e evita desperdício de contexto.
+**The Architect** is the cartographer. Synthesizes everything into formal architectural documentation: C4 diagrams at all three levels (Context, Containers, Components), full ERD, integration map, and technical debt.
 
-O que ele produz:
+What they produce:
 
-- Specs por componente (`sdd/[componente].md`)
-- Specs de API (`openapi/[api].yaml`)
-- User stories (`user-stories/[fluxo].md`)
-- Matriz de rastreabilidade código-spec (`traceability/code-spec-matrix.md`)
-
----
-
-## Fase 5: Revisão
-
-**Agente:** Revisor
-
-O Revisor tenta furar as specs. Encontra contradições internas, conflitos entre specs diferentes, afirmações marcadas como 🟢 que são na verdade inferências, comportamentos óbvios não especificados.
-
-Ele também coleta as lacunas 🔴 que só você pode resolver e apresenta como perguntas para validação humana. Depois que você responde, ele atualiza as specs e gera o relatório final de confiança.
-
-Bônus: se o plugin do Codex estiver ativo na sessão, o Revisor pode solicitar uma revisão cruzada independente antes de fazer a sua própria análise.
-
-O que ele produz:
-
-- Perguntas para validação (`questions.md`)
-- Relatório final de confiança (`confidence-report.md`)
-- Lacunas sem resposta (`gaps.md`)
-- Specs atualizadas in-place com as reclassificações
+- Domain and business rules (`domain.md`)
+- State machines in Mermaid (`state-machines.md`)
+- Permission matrix (`permissions.md`)
+- Retroactive ADRs (`adrs/`)
+- C4 diagrams (`c4-context.md`, `c4-containers.md`, `c4-components.md`)
+- Full ERD (`erd-complete.md`)
+- Architectural overview (`architecture.md`)
 
 ---
 
-## Agentes independentes
+## Phase 4: Generation
 
-Esses agentes não pertencem a uma fase específica e podem ser acionados a qualquer momento:
+**Agent:** Writer
 
-| Agente | Quando usar |
-|--------|-------------|
-| **Visor** | Quando você tiver screenshots do sistema disponíveis |
-| **Data Master** | Quando houver DDL, migrations ou modelos ORM para analisar |
-| **Design System** | Quando houver arquivos CSS, temas ou screenshots de interface |
-| **Tracer** | Quando existirem lacunas 🔴 que só o sistema em execução pode resolver |
-| **Chronicler** | Para documentar alterações de código feitas durante o desenvolvimento |
+The Writer is the team's notary. Transforms everything discovered in the previous phases into formal contracts: SDD specs per component, OpenAPI specs for APIs, user stories for user flows.
+
+Every statement in the specs is marked with the [confidence scale](escala-confianca.md): 🟢 CONFIRMED, 🟡 INFERRED, or 🔴 GAP.
+
+The Writer doesn't generate everything at once. It builds a plan, presents it for your approval, then generates one file at a time, waiting for confirmation before continuing. This allows incremental review and prevents context waste.
+
+What it produces:
+
+- Specs per component (`sdd/[component].md`)
+- API specs (`openapi/[api].yaml`)
+- User stories (`user-stories/[flow].md`)
+- Code-to-spec traceability matrix (`traceability/code-spec-matrix.md`)
+
+---
+
+## Phase 5: Review
+
+**Agent:** Reviewer
+
+The Reviewer tries to break the specs. Finds internal contradictions, conflicts between different specs, statements marked as 🟢 that are actually inferences, obvious behaviors left unspecified.
+
+It also collects the 🔴 gaps that only you can resolve and presents them as validation questions. After you answer, it updates the specs and generates the final confidence report.
+
+Bonus: if the Codex plugin is active in the session, the Reviewer can request an independent cross-review before doing its own analysis.
+
+What it produces:
+
+- Validation questions (`questions.md`)
+- Final confidence report (`confidence-report.md`)
+- Unresolved gaps (`gaps.md`)
+- Specs updated in-place with reclassifications
+
+---
+
+## Independent agents
+
+These agents don't belong to a specific phase and can be triggered at any time:
+
+| Agent | When to use |
+|-------|-------------|
+| **Visor** | When you have screenshots of the system available |
+| **Data Master** | When DDL, migrations, or ORM models are available |
+| **Design System** | When CSS files, themes, or interface screenshots are available |
+| **Tracer** | When there are 🔴 gaps that only the running system can resolve |
+| **Chronicler** | To document code changes made during development |

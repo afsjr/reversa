@@ -1,62 +1,62 @@
-# Reversa (Orquestrador)
+# Reversa (Orchestrator)
 
-**Comando:** `/reversa`
-**Fase:** Orquestração
-**Analogia:** O regente de orquestra
-
----
-
-## O que faz
-
-O orquestrador central é o primeiro e o último a entrar em cena. Ele não escreve código, não analisa módulos, não gera specs. Ele conhece a partitura inteira e sabe quem precisa entrar quando, em que ordem e em que ritmo.
-
-Sem ele, cada agente tocaria sua parte sem se conectar com os outros. Com ele, tudo vira música.
+**Command:** `/reversa`
+**Phase:** Orchestration
+**Analogy:** The orchestra conductor
 
 ---
 
-## Responsabilidades
+## What it does
 
-- Verifica se existe uma análise em andamento (lê `.reversa/state.json`)
-- Na primeira sessão: cria o plano de exploração personalizado e apresenta ao usuário
-- Em sessões subsequentes: retoma exatamente de onde parou
-- Executa os agentes do plano **sequencialmente**, um por vez
-- Salva checkpoints após cada agente concluir
-- Apresenta resumo breve do que foi gerado a cada etapa
-- Avisa quando o contexto está se esgotando e salva o estado antes de parar
-- Verifica se há uma nova versão disponível e avisa discretamente
+The central orchestrator is the first and last to take the stage. It doesn't write code, analyze modules, or generate specs. It knows the full score and knows who needs to enter when, in what order, and at what pace.
+
+Without it, each agent would play its part without connecting to the others. With it, everything becomes music.
 
 ---
 
-## Comportamento especial após o Scout
+## Responsibilities
 
-Depois que o Scout termina, o Reversa lê o `surface.json` gerado e personaliza a Fase 2 do plano. Em vez de uma tarefa genérica "analisar o código", o plano vira uma tarefa por módulo identificado:
+- Checks whether an analysis is in progress (reads `.reversa/state.json`)
+- First session: creates a personalized exploration plan and presents it to the user
+- Subsequent sessions: resumes exactly where it left off
+- Runs plan agents **sequentially**, one at a time
+- Saves checkpoints after each agent completes
+- Presents a brief summary of what was generated at each step
+- Warns when context is running out and saves state before stopping
+- Checks whether a new version is available and notifies discreetly
+
+---
+
+## Special behavior after Scout
+
+After Scout finishes, Reversa reads the generated `surface.json` and personalizes Phase 2 of the plan. Instead of a generic "analyze the code" task, the plan becomes one task per identified module:
 
 ```
-- [ ] Arqueólogo: análise do módulo `auth`
-- [ ] Arqueólogo: análise do módulo `orders`
-- [ ] Arqueólogo: análise do módulo `payments`
+- [ ] Archaeologist: analysis of module `auth`
+- [ ] Archaeologist: analysis of module `orders`
+- [ ] Archaeologist: analysis of module `payments`
 ```
 
 ---
 
-## Regras que ele nunca quebra
+## Rules it never breaks
 
-- Nunca executa múltiplos agentes ao mesmo tempo sem pedido explícito do usuário
-- Nunca desvia da sequência do plano aprovado sem avisar
-- Nunca apaga, modifica ou sobrescreve arquivos pré-existentes do projeto
+- Never runs multiple agents simultaneously without explicit user request
+- Never deviates from the approved plan sequence without notice
+- Never deletes, modifies, or overwrites pre-existing project files
 
 ---
 
-## Como ativar
+## How to activate
 
 === "Claude Code / Cursor / Gemini CLI"
     ```
     /reversa
     ```
 
-=== "Codex e engines sem slash commands"
+=== "Codex and engines without slash commands"
     ```
     reversa
     ```
 
-Para retomar uma análise interrompida, basta ativar novamente. O estado salvo é lido automaticamente.
+To resume an interrupted analysis, just activate again. The saved state is read automatically.

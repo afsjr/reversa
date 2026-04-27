@@ -1,44 +1,44 @@
 # Scout
 
-**Comando:** `/reversa-scout`
-**Fase:** 1 - Reconhecimento
-**Analogia:** O corretor de imóveis
+**Command:** `/reversa-scout`
+**Phase:** 1 - Reconnaissance
+**Analogy:** The real estate agent
 
 ---
 
-## O que faz
+## What it does
 
-O Scout é o primeiro a entrar no projeto. Ele faz o tour inicial: não abre gavetas, não lê todos os documentos, não mexe em nada. Só mapeia o território.
+The Scout is the first to enter the project. It does the initial tour: doesn't open drawers, doesn't read all the documents, doesn't touch anything. Just maps the territory.
 
-Quantos módulos existem? Qual linguagem? Qual framework? Quais as dependências críticas? Onde é o ponto de entrada da aplicação? O Scout responde tudo isso sem precisar ler uma linha de lógica de negócio.
-
----
-
-## O que ele analisa
-
-- **Estrutura de pastas:** árvore completa do projeto (excluindo `node_modules`, `.git`, `dist`, `build` e similares)
-- **Tecnologias e frameworks:** linguagens identificadas por extensão de arquivo, frameworks e bibliotecas via arquivos de configuração (`package.json`, `requirements.txt`, `go.mod`, etc.)
-- **Pontos de entrada:** `main`, `index`, `app`, `server`, `bootstrap`; arquivos de configuração; CI/CD; Docker
-- **Schema de banco (superficial):** apenas lista arquivos DDL, migrations e ORM. O Data Master faz a análise detalhada.
-- **Cobertura de testes:** frameworks de teste identificados e estimativa de cobertura por contagem de arquivos
+How many modules are there? What language? What framework? What are the critical dependencies? Where is the application entry point? Scout answers all of this without reading a single line of business logic.
 
 ---
 
-## O que ele produz
+## What it analyzes
 
-| Arquivo | Conteúdo |
-|---------|----------|
-| `_reversa_sdd/inventory.md` | Inventário completo do projeto |
-| `_reversa_sdd/dependencies.md` | Dependências com versões |
-| `.reversa/context/surface.json` | Dados estruturados para os demais agentes |
-
-O `surface.json` é especialmente importante: o Reversa o usa para personalizar as tarefas da Fase 2 com base nos módulos identificados.
+- **Folder structure:** complete project tree (excluding `node_modules`, `.git`, `dist`, `build`, and similar)
+- **Technologies and frameworks:** languages identified by file extension, frameworks and libraries via config files (`package.json`, `requirements.txt`, `go.mod`, etc.)
+- **Entry points:** `main`, `index`, `app`, `server`, `bootstrap`; config files; CI/CD; Docker
+- **Database schema (surface):** only lists DDL files, migrations, and ORM models. Data Master does the detailed analysis.
+- **Test coverage:** identified test frameworks and coverage estimate by file count
 
 ---
 
-## Quando usar manualmente
+## What it produces
 
-Você raramente vai precisar chamar o Scout diretamente. O orquestrador faz isso automaticamente na Fase 1. Mas se você quiser atualizar o inventário do projeto depois de uma refatoração grande, pode chamar diretamente:
+| File | Content |
+|------|---------|
+| `_reversa_sdd/inventory.md` | Complete project inventory |
+| `_reversa_sdd/dependencies.md` | Dependencies with versions |
+| `.reversa/context/surface.json` | Structured data for the other agents |
+
+The `surface.json` is especially important: Reversa uses it to customize Phase 2 tasks based on identified modules.
+
+---
+
+## When to use manually
+
+You'll rarely need to call Scout directly. The orchestrator does this automatically in Phase 1. But if you want to refresh the project inventory after a major refactoring:
 
 ```
 /reversa-scout

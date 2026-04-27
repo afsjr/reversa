@@ -1,29 +1,29 @@
-# Redator
+# Writer
 
-**Comando:** `/reversa-redator`
-**Fase:** 4 - Geração
-**Analogia:** O tabelião
-
----
-
-## O que faz
-
-O Redator transforma o que foi descoberto nas três fases anteriores em contratos formais: precisos, rastreáveis e suficientemente detalhados para que um agente de IA, sem acesso ao código original, possa reimplementar a funcionalidade com fidelidade.
-
-Specs não são documentação para humanos lerem numa tarde tranquila. São contratos operacionais.
+**Command:** `/reversa-redator`
+**Phase:** 4 - Generation
+**Analogy:** The notary
 
 ---
 
-## O fluxo de trabalho
+## What it does
 
-O Redator nunca gera tudo de uma vez. Projetos grandes têm muitos componentes, e gerar tudo em uma resposta consome contexto excessivo e impede revisão incremental. O fluxo é assim:
+The Writer transforms what was discovered in the previous three phases into formal contracts: precise, traceable, and detailed enough for an AI agent, without access to the original code, to reimplement the functionality faithfully.
 
-### 1. Montar e apresentar o plano
+Specs are not documentation for humans to read on a quiet afternoon. They are operational contracts.
 
-Antes de gerar qualquer arquivo, o Redator lê todos os artefatos das fases anteriores e monta uma lista completa do que vai gerar:
+---
+
+## The workflow
+
+The Writer never generates everything at once. Large projects have many components, and generating everything in one response burns excessive context and prevents incremental review. The flow is:
+
+### 1. Build and present the plan
+
+Before generating any file, the Writer reads all artifacts from previous phases and builds a complete list of what it will generate:
 
 ```
-📋 Plano de geração: 12 itens
+📋 Generation plan: 12 items
 
 SDD:
   [ ] 1. sdd/auth.md
@@ -36,43 +36,43 @@ OpenAPI:
 User Stories:
   [ ] 5. user-stories/checkout.md
 
-Rastreabilidade:
+Traceability:
   [ ] 6. traceability/code-spec-matrix.md
 
-Digite CONTINUAR para iniciar.
+Type CONTINUE to start.
 ```
 
-Você aprova (ou ajusta) o plano antes de qualquer geração.
+You approve (or adjust) the plan before any generation begins.
 
-### 2. Gerar um item por vez
+### 2. Generate one item at a time
 
-Para cada item: gera o arquivo, salva, avisa o que foi concluído e o que vem a seguir, e **para**. Você confirma "CONTINUAR" antes do próximo. Isso permite revisar cada spec antes de avançar.
+For each item: generates the file, saves it, reports what was completed and what comes next, and **stops**. You confirm "CONTINUE" before the next one. This allows you to review each spec before moving on.
 
-### 3. Code/Spec Matrix por último
+### 3. Code/Spec Matrix last
 
-O último item sempre é a matriz de rastreabilidade: qual arquivo de código corresponde a qual spec, com o nível de cobertura de cada um.
-
----
-
-## Formato das specs SDD
-
-Cada spec segue um template fixo com seções obrigatórias:
-
-- **Visão geral** do componente
-- **Responsabilidades** com classificação MoSCoW (Must / Should / Could / Won't)
-- **Fluxos** e regras de negócio documentadas
-- **Requisitos não funcionais** (inferidos do código, não inventados)
-- **Critérios de aceitação** no formato `Dado / Quando / Então`, com happy path e cenários de falha
-
-Cada afirmação é marcada com 🟢, 🟡 ou 🔴. Sem exceções.
+The last item is always the traceability matrix: which code file corresponds to which spec, with the coverage level of each.
 
 ---
 
-## Arquivos gerados
+## SDD spec format
 
-| Arquivo | Conteúdo |
-|---------|----------|
-| `_reversa_sdd/sdd/[componente].md` | Spec por componente |
-| `_reversa_sdd/openapi/[api].yaml` | Spec de API (se aplicável) |
-| `_reversa_sdd/user-stories/[fluxo].md` | User stories (se aplicável) |
-| `_reversa_sdd/traceability/code-spec-matrix.md` | Matriz código-spec |
+Each spec follows a fixed template with required sections:
+
+- **Overview** of the component
+- **Responsibilities** with MoSCoW classification (Must / Should / Could / Won't)
+- **Flows** and documented business rules
+- **Non-functional requirements** (inferred from code, not invented)
+- **Acceptance criteria** in `Given / When / Then` format, with happy path and failure scenarios
+
+Every statement is marked with 🟢, 🟡, or 🔴. No exceptions.
+
+---
+
+## Generated files
+
+| File | Content |
+|------|---------|
+| `_reversa_sdd/sdd/[component].md` | Spec per component |
+| `_reversa_sdd/openapi/[api].yaml` | API spec (if applicable) |
+| `_reversa_sdd/user-stories/[flow].md` | User stories (if applicable) |
+| `_reversa_sdd/traceability/code-spec-matrix.md` | Code-to-spec matrix |

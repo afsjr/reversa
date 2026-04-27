@@ -1,67 +1,67 @@
 # Tracer
 
-**Comando:** `/reversa-tracer`
-**Fase:** Qualquer
-**Analogia:** O investigador de campo
+**Command:** `/reversa-tracer`
+**Phase:** Any
+**Analogy:** The field investigator
 
 ---
 
-## O que faz
+## What it does
 
-A análise estática tem limites. Ela lê o código, mas não vê o sistema em execução. Certos comportamentos só existem quando há dados reais, usuários reais, logs reais.
+Static analysis has limits. It reads the code but doesn't see the system running. Certain behaviors only exist when there's real data, real users, real logs.
 
-O Tracer é o investigador que vai ao local quando o código não responde. Observa logs ao vivo, consulta o banco com `SELECT` somente leitura, pede para você executar fluxos específicos enquanto ele acompanha o que acontece.
+The Tracer is the investigator who goes on-site when the code doesn't answer. Observes live logs, queries the database with read-only `SELECT`, asks you to run specific flows while it watches what happens.
 
-**Regra absoluta:** o Tracer nunca modifica nada. Nenhum `INSERT`, `UPDATE`, `DELETE`. Só observa.
-
----
-
-## Quando usar
-
-Use o Tracer quando houver lacunas 🔴 no `_reversa_sdd/gaps.md` que só o sistema em execução pode resolver. Por exemplo:
-
-- "Qual é o comportamento quando a gateway de pagamento retorna timeout?"
-- "Esse endpoint é realmente chamado? Com que frequência?"
-- "Qual a distribuição real de valores no campo `status`?"
+**Absolute rule:** the Tracer never modifies anything. No `INSERT`, `UPDATE`, `DELETE`. Only observes.
 
 ---
 
-## O que ele analisa
+## When to use
 
-### Logs históricos
+Use the Tracer when there are 🔴 gaps in `_reversa_sdd/gaps.md` that only the running system can resolve. For example:
 
-Se existirem arquivos de log:
-
-- Padrões de uso real: endpoints mais chamados, fluxos mais executados
-- Sequências de eventos que revelam fluxos de usuário não documentados
-- Erros frequentes e seus contextos
-- Confirmação ou refutação de regras que foram marcadas como 🟡 INFERIDO
-
-### Dados reais (somente leitura)
-
-Se você conceder acesso ao banco de dados:
-
-- `SELECT` apenas
-- Distribuição de valores em campos de status
-- Registros com valores inesperados (edge cases que existem na produção)
-- Confirmação de cardinalidades
-
-### Tracing de execução
-
-Se o sistema puder ser iniciado localmente:
-
-- Ele pede para você executar fluxos específicos
-- Acompanha os logs em tempo real
-- Mapeia a sequência real de chamadas
+- "What's the behavior when the payment gateway returns timeout?"
+- "Is this endpoint actually called? How often?"
+- "What's the real distribution of values in the `status` field?"
 
 ---
 
-## O que ele produz
+## What it analyzes
 
-| Arquivo | Conteúdo |
-|---------|----------|
-| `_reversa_sdd/dynamic.md` | Descobertas da análise dinâmica |
-| `_reversa_sdd/sequences/[fluxo].md` | Diagramas de sequência em Mermaid |
-| `_reversa_sdd/gaps-resolved.md` | Lacunas 🔴 resolvidas com evidência |
+### Historical logs
 
-Specs em `_reversa_sdd/sdd/` são atualizadas: onde o Tracer encontrou evidência real, os 🔴 viram 🟢.
+If log files exist:
+
+- Real usage patterns: most called endpoints, most executed flows
+- Event sequences that reveal undocumented user flows
+- Frequent errors and their contexts
+- Confirmation or refutation of rules marked as 🟡 INFERRED
+
+### Real data (read-only)
+
+If you grant database access:
+
+- `SELECT` only
+- Value distribution in status fields
+- Records with unexpected values (real production edge cases)
+- Cardinality confirmation
+
+### Execution tracing
+
+If the system can be started locally:
+
+- It asks you to run specific flows
+- Watches logs in real time
+- Maps the actual sequence of calls
+
+---
+
+## What it produces
+
+| File | Content |
+|------|---------|
+| `_reversa_sdd/dynamic.md` | Dynamic analysis findings |
+| `_reversa_sdd/sequences/[flow].md` | Sequence diagrams in Mermaid |
+| `_reversa_sdd/gaps-resolved.md` | 🔴 gaps resolved with evidence |
+
+Specs in `_reversa_sdd/sdd/` are updated: where Tracer found real evidence, 🔴 becomes 🟢.

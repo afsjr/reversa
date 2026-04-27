@@ -1,58 +1,58 @@
-# Arquiteto
+# Architect
 
-**Comando:** `/reversa-arquiteto`
-**Fase:** 3 - Interpretação
-**Analogia:** O cartógrafo
-
----
-
-## O que faz
-
-O Arquiteto visita o território que foi escavado e interpretado, e produz mapas formais. A ideia é que alguém que nunca pisou no projeto consiga entender a estrutura completa olhando apenas para o que o Arquiteto produziu.
-
-Ele trabalha junto com o Detetive na Fase 3. Enquanto o Detetive extrai o *porquê* (regras de negócio, decisões), o Arquiteto sintetiza o *como* (estrutura, componentes, integrações).
+**Command:** `/reversa-arquiteto`
+**Phase:** 3 - Interpretation
+**Analogy:** The cartographer
 
 ---
 
-## O que ele produz
+## What it does
 
-### Diagramas C4
+The Architect visits the excavated and interpreted territory and produces formal maps. The idea is that someone who has never set foot in the project can understand the complete structure just by looking at what the Architect produced.
 
-O Arquiteto gera os três níveis do modelo C4:
+It works alongside the Detective in Phase 3. While the Detective extracts the *why* (business rules, decisions), the Architect synthesizes the *how* (structure, components, integrations).
 
-**Contexto (Nível 1):** o sistema no centro, os usuários ao redor, os sistemas externos com que se integra e os protocolos de comunicação.
+---
 
-**Containers (Nível 2):** aplicações, serviços, bancos de dados, filas e caches, com a tecnologia de cada um e como se comunicam entre si.
+## What it produces
 
-**Componentes (Nível 3):** para os containers mais relevantes, os componentes internos e suas responsabilidades.
+### C4 diagrams
 
-Todos os diagramas são gerados em Mermaid, prontos para renderizar em qualquer Markdown.
+The Architect generates all three levels of the C4 model:
 
-### ERD completo
+**Context (Level 1):** the system at the center, users around it, external systems it integrates with, and communication protocols.
 
-Todas as entidades com atributos principais, relacionamentos com cardinalidades (1:1, 1:N, N:M), chaves primárias e estrangeiras. Em Mermaid (`erDiagram`).
+**Containers (Level 2):** applications, services, databases, queues, and caches, with the technology of each and how they communicate with each other.
 
-### Integrações externas
+**Components (Level 3):** for the most relevant containers, the internal components and their responsibilities.
 
-APIs REST/GraphQL consumidas e produzidas, webhooks, eventos, mensagens, protocolos e formatos de dados.
+All diagrams are generated in Mermaid, ready to render in any Markdown.
 
-### Dívidas técnicas
+### Full ERD
 
-Código duplicado, padrões inconsistentes, dependências críticas desatualizadas e ausência de testes em módulos críticos.
+All entities with main attributes, relationships with cardinalities (1:1, 1:N, N:M), primary and foreign keys. In Mermaid (`erDiagram`).
+
+### External integrations
+
+REST/GraphQL APIs consumed and produced, webhooks, events, messages, protocols, and data formats.
+
+### Technical debt
+
+Duplicated code, inconsistent patterns, critically outdated dependencies, and absence of tests in critical modules.
 
 ### Spec Impact Matrix
 
-Uma matriz que mostra qual componente impacta qual. Útil para saber o raio de blast de uma mudança antes de fazer.
+A matrix showing which component impacts which. Useful for knowing the blast radius of a change before making it.
 
 ---
 
-## Arquivos gerados
+## Generated files
 
-| Arquivo | Conteúdo |
-|---------|----------|
-| `_reversa_sdd/architecture.md` | Visão geral arquitetural |
-| `_reversa_sdd/c4-context.md` | Diagrama C4: Contexto |
-| `_reversa_sdd/c4-containers.md` | Diagrama C4: Containers |
-| `_reversa_sdd/c4-components.md` | Diagrama C4: Componentes |
-| `_reversa_sdd/erd-complete.md` | ERD completo em Mermaid |
-| `_reversa_sdd/traceability/spec-impact-matrix.md` | Matriz de impacto |
+| File | Content |
+|------|---------|
+| `_reversa_sdd/architecture.md` | Architectural overview |
+| `_reversa_sdd/c4-context.md` | C4 Diagram: Context |
+| `_reversa_sdd/c4-containers.md` | C4 Diagram: Containers |
+| `_reversa_sdd/c4-components.md` | C4 Diagram: Components |
+| `_reversa_sdd/erd-complete.md` | Full ERD in Mermaid |
+| `_reversa_sdd/traceability/spec-impact-matrix.md` | Impact matrix |

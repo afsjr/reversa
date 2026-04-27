@@ -1,10 +1,10 @@
 # CLI
 
-O Reversa tem um CLI simples para gerenciar a instalação e o ciclo de vida dos agentes no seu projeto. Todos os comandos rodam com `npx reversa` na raiz do projeto.
+Reversa has a simple CLI to manage the installation and lifecycle of agents in your project. All commands run with `npx reversa` in the project root.
 
 ---
 
-## Comandos disponíveis
+## Available commands
 
 ### `install`
 
@@ -12,9 +12,9 @@ O Reversa tem um CLI simples para gerenciar a instalação e o ciclo de vida dos
 npx reversa install
 ```
 
-Instala o Reversa no projeto legado atual. Detecta as engines presentes, pergunta suas preferências e cria toda a estrutura necessária.
+Installs Reversa in the current legacy project. Detects present engines, asks for your preferences, and creates the entire required structure.
 
-Use uma vez, na raiz do projeto que você quer analisar.
+Use once, in the root of the project you want to analyze.
 
 ---
 
@@ -24,9 +24,9 @@ Use uma vez, na raiz do projeto que você quer analisar.
 npx reversa status
 ```
 
-Mostra o estado atual da análise: qual fase está em andamento, quais agentes já rodaram, o que falta completar.
+Shows the current analysis state: which phase is in progress, which agents have already run, what's left to complete.
 
-Útil para ter uma visão geral rápida antes de retomar uma sessão.
+Useful for a quick overview before resuming a session.
 
 ---
 
@@ -36,9 +36,9 @@ Mostra o estado atual da análise: qual fase está em andamento, quais agentes j
 npx reversa update
 ```
 
-Atualiza os agentes para a versão mais recente do Reversa.
+Updates agents to the latest version of Reversa.
 
-O comando é inteligente: ele verifica o manifesto SHA-256 de cada arquivo e nunca sobrescreve arquivos que você personalizou. Se você fez ajustes em algum agente, eles ficam intactos.
+The command is smart: it checks the SHA-256 manifest of each file and never overwrites files you've customized. If you made adjustments to any agent, they stay intact.
 
 ---
 
@@ -48,7 +48,7 @@ O comando é inteligente: ele verifica o manifesto SHA-256 de cada arquivo e nun
 npx reversa add-agent
 ```
 
-Adiciona um agente específico ao projeto. Útil se você não instalou todos os agentes na instalação inicial e agora quer incluir, por exemplo, o Data Master ou o Design System.
+Adds a specific agent to the project. Useful if you didn't install all agents during the initial installation and now want to include, for example, Data Master or Design System.
 
 ---
 
@@ -58,7 +58,7 @@ Adiciona um agente específico ao projeto. Útil se você não instalou todos os
 npx reversa add-engine
 ```
 
-Adiciona suporte a uma engine de IA que não estava presente quando você instalou. Por exemplo: instalou só para Claude Code e agora quer adicionar Codex também.
+Adds support for an AI engine that wasn't present when you installed. For example: you installed only for Claude Code and now want to add Codex.
 
 ---
 
@@ -68,7 +68,7 @@ Adiciona suporte a uma engine de IA que não estava presente quando você instal
 npx reversa uninstall
 ```
 
-Remove o Reversa do projeto: apaga os arquivos criados pela instalação (`.reversa/`, `.agents/skills/reversa-*/`, os arquivos de entrada das engines).
+Removes Reversa from the project: deletes the files created by the installation (`.reversa/`, `.agents/skills/reversa-*/`, engine entry files).
 
-!!! info "Seus arquivos continuam intactos"
-    O `uninstall` remove **apenas** o que o Reversa criou. Nenhum arquivo original do projeto é tocado. As especificações geradas em `_reversa_sdd/` também são preservadas por padrão.
+!!! info "Your files stay intact"
+    `uninstall` removes **only** what Reversa created. No original project file is touched. Specifications generated in `_reversa_sdd/` are also preserved by default.

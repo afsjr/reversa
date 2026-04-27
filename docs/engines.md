@@ -1,14 +1,14 @@
-# Engines suportadas
+# Supported engines
 
-O Reversa funciona com as principais engines de IA do mercado. O instalador detecta automaticamente quais estão presentes no ambiente, mas você pode adicionar mais a qualquer momento com `npx reversa add-engine`.
+Reversa works with the leading AI engines on the market. The installer automatically detects which ones are present in the environment, but you can add more at any time with `npx reversa add-engine`.
 
 ---
 
-## Compatibilidade
+## Compatibility
 
-| Engine | Arquivo criado | Skills path | Como ativar |
-|--------|---------------|-------------|-------------|
-| **Claude Code** ⭐ | `CLAUDE.md` | `.claude/skills/reversa-*/` e `.agents/skills/reversa-*/` | `/reversa` |
+| Engine | File created | Skills path | How to activate |
+|--------|-------------|-------------|-----------------|
+| **Claude Code** ⭐ | `CLAUDE.md` | `.claude/skills/reversa-*/` and `.agents/skills/reversa-*/` | `/reversa` |
 | **Codex** ⭐ | `AGENTS.md` | `.agents/skills/reversa-*/` | `reversa` |
 | **Cursor** ⭐ | `.cursorrules` | `.agents/skills/reversa-*/` | `/reversa` |
 | **Gemini CLI** | `GEMINI.md` | `.agents/skills/reversa-*/` | `/reversa` |
@@ -16,82 +16,53 @@ O Reversa funciona com as principais engines de IA do mercado. O instalador dete
 | **Antigravity** | `AGENTS.md` | `.agents/skills/reversa-*/` | `/reversa` |
 | **Kiro** | `.kiro/steering/reversa.md` | `.agents/skills/reversa-*/` | `/reversa` |
 | **Opencode** | `AGENTS.md` | `.agents/skills/reversa-*/` | `reversa` |
-| **Cline** | `.clinerules` | `.agents/skills/reversa-*/` | `/reversa` |
-| **Roo Code** | `.roorules` | `.agents/skills/reversa-*/` | `/reversa` |
-| **GitHub Copilot** | `.github/copilot-instructions.md` | `.agents/skills/reversa-*/` | `/reversa` |
-| **Aider** | `CONVENTIONS.md` | `.agents/skills/reversa-*/` | `reversa` |
-| **Amazon Q Developer** | `.amazonq/rules/reversa.md` | `.agents/skills/reversa-*/` | `/reversa` |
 
 ---
 
 ## Claude Code
 
-A engine mais testada e com melhor suporte. Usa slash commands nativos, o que torna a ativação intuitiva. O Reversa cria os arquivos em `.claude/skills/` e em `.agents/skills/` (para compatibilidade com outras engines que possam ser adicionadas depois).
+The most tested engine with the best support. Uses native slash commands, making activation intuitive. Reversa creates files in both `.claude/skills/` and `.agents/skills/` (for compatibility with other engines that may be added later).
 
 ---
 
 ## Codex
 
-Totalmente compatível. Como o Codex não usa slash commands, a ativação é pelo nome do agente diretamente: `reversa`, `reversa-scout`, etc. O arquivo `AGENTS.md` na raiz do projeto serve como ponto de entrada.
+Fully compatible. Since Codex doesn't use slash commands, activation is by the agent name directly: `reversa`, `reversa-scout`, etc. The `AGENTS.md` file at the project root serves as the entry point.
 
 ---
 
 ## Cursor
 
-Compatível via `.cursorrules`. O Cursor lê as regras desse arquivo e os agentes ficam disponíveis como skills.
+Compatible via `.cursorrules`. Cursor reads the rules from this file and the agents are available as skills.
 
 ---
 
-## Gemini CLI e Windsurf
+## Gemini CLI and Windsurf
 
-Suporte completo. Os agentes ficam em `.agents/skills/` e são acessados via os mecanismos nativos de cada engine.
+Full support. Agents live in `.agents/skills/` and are accessed via each engine's native mechanisms.
 
 ---
 
 ## Antigravity
 
-Plataforma de desenvolvimento agêntico do Google, lançada em novembro de 2025. Lê `AGENTS.md` nativamente (mesmo arquivo do Codex). Se Codex já estiver instalado no projeto, o `AGENTS.md` existente é reaproveitado sem duplicação. Comando CLI: `agy`.
+Google's agentic development platform, released in November 2025. Reads `AGENTS.md` natively (same file as Codex). If Codex is already installed in the project, the existing `AGENTS.md` is reused without duplication. CLI command: `agy`.
 
 ---
 
 ## Kiro
 
-IDE agêntico da Amazon. Usa steering documents em `.kiro/steering/` para instruir o agente: o instalador cria `.kiro/steering/reversa.md`. Os agentes ficam em `.agents/skills/` e são ativados via `/reversa`.
+Amazon's agentic IDE. Uses steering documents in `.kiro/steering/` to instruct the agent: the installer creates `.kiro/steering/reversa.md`. Agents live in `.agents/skills/` and are activated via `/reversa`.
 
 ---
 
 ## Opencode
 
-Agente de codificação open source para terminal (SST). Lê `AGENTS.md` nativamente, mesma convenção do Codex. Comando CLI: `opencode`. Como Codex, a ativação é pelo nome do agente: `reversa`.
+Open source coding agent for the terminal (SST). Reads `AGENTS.md` natively, same convention as Codex. CLI command: `opencode`. Like Codex, activation is by agent name: `reversa`.
 
 ---
 
-## Cline e Roo Code
+## Multiple engines in the same project
 
-Extensions de VS Code com suporte a regras personalizadas via `.clinerules` e `.roorules` respectivamente. O padrão é idêntico ao Cursor e Windsurf: arquivo de regras na raiz do projeto que instrui o agente ao ativar `/reversa`.
+You can have all engines installed at the same time. Agents in `.agents/skills/` are shared by all of them. The installer creates the specific entry files for each engine without conflict.
 
----
-
-## GitHub Copilot
-
-Usa `.github/copilot-instructions.md` como arquivo de instruções customizadas, lido automaticamente pelo Copilot em toda sessão. O instalador cria o arquivo dentro de `.github/` (que pode já existir no projeto).
-
----
-
-## Aider
-
-Agente de codificação para terminal. O entry file `CONVENTIONS.md` na raiz é passado via `--read CONVENTIONS.md` ou configurado em `.aider.conf.yml`. Como Codex e Opencode, a ativação é pelo nome: `reversa`.
-
----
-
-## Amazon Q Developer
-
-CLI de IA da AWS. Usa regras em `.amazonq/rules/` para instruir o agente por projeto. O instalador cria `.amazonq/rules/reversa.md` sem interferir em outras regras que você já tenha nessa pasta.
-
----
-
-## Múltiplas engines no mesmo projeto
-
-Você pode ter todas as engines instaladas ao mesmo tempo. Os agentes em `.agents/skills/` são compartilhados por todas. O instalador cria os arquivos de entrada específicos de cada engine sem conflito entre eles.
-
-Se você trabalha em equipe e cada pessoa usa uma engine diferente, isso funciona normalmente: cada um usa o arquivo de entrada da sua engine, mas todos os agentes estão no mesmo lugar.
+If you work in a team where each person uses a different engine, this works normally: everyone uses their engine's entry file, but all agents are in the same place.

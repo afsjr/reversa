@@ -1,73 +1,73 @@
 # Reversa
 
-**Transforme sistemas legados em especificações executáveis por agentes de IA.**
+**Turn legacy systems into executable specifications for AI agents.**
 
-Sabe aquele sistema que ninguém quer tocar? O que tem 10 anos, roda em produção, gera dinheiro todos os dias, mas ninguém sabe ao certo *o que ele faz* por dentro? O Reversa foi feito para ele.
-
----
-
-## O que é o Reversa?
-
-O Reversa é um framework de engenharia reversa de especificações. Você o instala dentro do projeto legado, ativa um agente de IA que já usa no dia a dia, e ele coordena um time de especialistas para analisar o código e gerar especificações completas, rastreáveis e prontas para uso por qualquer agente codificador.
-
-**Em outras palavras:** o Reversa transforma código sem documentação em contratos operacionais que um agente de IA consegue entender e usar para evoluir o sistema com segurança.
+You know that system nobody wants to touch? The one that's been running for 10 years, makes money every day, but nobody really knows what it does on the inside? Reversa was built for it.
 
 ---
 
-## Começo rápido
+## What is Reversa?
 
-Na raiz do projeto legado:
+Reversa is a specification reverse-engineering framework. You install it inside a legacy project, activate an AI agent you already use, and it coordinates a team of specialists to analyze the code and generate complete, traceable, ready-to-use specifications for any coding agent.
+
+**In other words:** Reversa turns undocumented code into operational contracts that an AI agent can understand and use to safely evolve the system.
+
+---
+
+## Quick start
+
+In the root of the legacy project:
 
 ```bash
 npx reversa install
 ```
 
-Depois, abra o projeto no seu agente de IA favorito e digite:
+Then open the project in your favorite AI agent and type:
 
 ```
 /reversa
 ```
 
-Pronto. O Reversa assume o volante e guia você até o fim.
+That's it. Reversa takes the wheel and guides you to the end.
 
 ---
 
-## O que você vai encontrar aqui
+## What you'll find here
 
 <div class="grid cards" markdown>
 
-- **Por que o Reversa existe**
+- **Why Reversa exists**
 
-    O problema que ele resolve e por que a solução importa.
+    The problem it solves and why it matters.
 
-    [:octicons-arrow-right-24: Ler mais](por-que-reversa.md)
+    [:octicons-arrow-right-24: Read more](por-que-reversa.md)
 
-- **Instalação**
+- **Installation**
 
-    Dois minutos e você está pronto para começar.
+    Two minutes and you're ready to go.
 
-    [:octicons-arrow-right-24: Instalar](instalacao.md)
+    [:octicons-arrow-right-24: Install](instalacao.md)
 
-- **Pipeline de análise**
+- **Analysis pipeline**
 
-    As 5 fases que transformam código em especificação.
+    The 5 phases that turn code into specification.
 
-    [:octicons-arrow-right-24: Ver pipeline](pipeline.md)
+    [:octicons-arrow-right-24: See pipeline](pipeline.md)
 
-- **Agentes**
+- **Agents**
 
-    Conheça o time: 14 especialistas, cada um com sua função.
+    Meet the team: 14 specialists, each with their own role.
 
-    [:octicons-arrow-right-24: Ver agentes](agentes/index.md)
+    [:octicons-arrow-right-24: See agents](agentes/index.md)
 
 </div>
 
 ---
 
-## Garantia de segurança
+## Safety guarantee
 
-!!! warning "O Reversa nunca toca nos seus arquivos"
-    Os agentes escrevem **apenas** em `.reversa/` e `_reversa_sdd/`. Nenhum arquivo do seu projeto é modificado, apagado ou sobrescrito. Nunca.
+!!! warning "Reversa never touches your files"
+    Agents write **only** to `.reversa/` and `_reversa_sdd/`. No file in your project is modified, deleted, or overwritten. Ever.
 
-!!! info "Sem chaves de API"
-    O Reversa não solicita, não armazena e não transmite chaves de API de nenhum serviço. A inteligência vem do agente que você já usa no ambiente.
+!!! info "No API keys"
+    Reversa does not request, store, or transmit API keys from any service. The intelligence comes from the agent you already use in your environment.
